@@ -8,6 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const categories = [
   ["Restaurants", "Restauracje"],
@@ -51,6 +52,18 @@ export const CreateAccount = () => {
               placeholder="np. 'Opłata za wynajem mieszkania'"
               helperText="Dzięki nazwie łatwiej rozpoznasz, jakie środki znadjują się na tym koncie."
               fullWidth
+            />
+          </Grid>
+
+          <Grid item>
+            <TextField
+              id="budget"
+              label="Budżet"
+              type="number"
+              variant="outlined"
+              placeholder="np. 1000"
+              helperText="Przewidziany budżet, jaki będzie dostępny z tego konta."
+              endAdornment={<InputAdornment position="end">PLN</InputAdornment>}
             />
           </Grid>
         </Grid>
