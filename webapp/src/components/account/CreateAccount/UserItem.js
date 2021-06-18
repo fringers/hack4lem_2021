@@ -43,7 +43,7 @@ export const UserItem = ({ own }) => {
           </Grid>
 
           <Grid item>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <TextField
                   id="budget"
@@ -62,10 +62,7 @@ export const UserItem = ({ own }) => {
               </Grid>
 
               <Grid item>
-                <FormControlLabel
-                  control={<Checkbox name="test" />}
-                  label="Zezwalaj na wypłaty"
-                />
+                <FormControlLabel control={<Checkbox name="test" />} label="Blokuj wypłaty" />
               </Grid>
             </Grid>
           </Grid>
