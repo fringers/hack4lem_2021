@@ -2,31 +2,10 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import InputAdornment from "@material-ui/core/InputAdornment";
-
-const categories = [
-  ["restaurants", "Restauracje"],
-  ["groceries", "Artykuły spożywcze"],
-  ["health", "Zdrowie"],
-  ["sshopping", "Zakupy"],
-  ["transport", "Transport"],
-  ["general", "Ogólne"],
-  ["services", "Usługi"],
-];
-
-const renewalPeriods = [
-  ["none", "Jednorazowy"],
-  ["week", "Co tydzzień"],
-  ["month", "Co miesiąc"],
-  ["quarter", "Co kwartał"],
-  ["year", "Co rok"],
-];
+import { CategoryField } from "./CreateAccount/CategoryField";
+import { NameField } from "./CreateAccount/NameField";
+import { BudgetField } from "./CreateAccount/BudgetField";
+import { RenewalField } from "./CreateAccount/RenewalField";
 
 export const CreateAccount = () => {
   return (
@@ -38,55 +17,19 @@ export const CreateAccount = () => {
       <form noValidate autoComplete="off">
         <Grid container direction="column" spacing={2}>
           <Grid item>
-            <FormControl autoWidth>
-              <InputLabel id="category-label">Kategoria</InputLabel>
-              <Select labelId="category-label" id="category" variant="outlined">
-                {categories.map((c) => (
-                  <MenuItem value={c[0]}>{c[1]}</MenuItem>
-                ))}
-              </Select>
-              <FormHelperText>
-                Kategoria definiuje, do jakich transakcji będzie używane to
-                konto.
-              </FormHelperText>
-            </FormControl>
+            <CategoryField />
           </Grid>
 
           <Grid item>
-            <TextField
-              id="name"
-              label="Nazwa"
-              variant="outlined"
-              placeholder="np. 'Opłata za wynajem mieszkania'"
-              helperText="Dzięki nazwie łatwiej rozpoznasz, jakie środki znadjują się na tym koncie."
-              fullWidth
-            />
+            <NameField />
           </Grid>
 
           <Grid item>
-            <TextField
-              id="budget"
-              label="Budżet"
-              type="number"
-              variant="outlined"
-              placeholder="np. 1000"
-              helperText="Przewidziany budżet, jaki będzie dostępny z tego konta."
-              endAdornment={<InputAdornment position="end">PLN</InputAdornment>}
-            />
+            <BudgetField />
           </Grid>
 
           <Grid item>
-            <FormControl autoWidth>
-              <InputLabel id="renewal-label">Odnawianie</InputLabel>
-              <Select labelId="renewal-label" id="renewal" variant="outlined">
-                {renewalPeriods.map((c) => (
-                  <MenuItem value={c[0]}>{c[1]}</MenuItem>
-                ))}
-              </Select>
-              <FormHelperText>
-                Częstotliwość odnawiania budżetu
-              </FormHelperText>
-            </FormControl>
+            <RenewalField />
           </Grid>
         </Grid>
       </form>
