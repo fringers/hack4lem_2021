@@ -4,6 +4,7 @@ import { Header } from "./components/header/Header";
 import { Dashboard } from "./components/dashboard/Dashboard";
 import { CreateAccount } from "./components/account/CreateAccount";
 import { AccountDetails } from "./components/account/AccountDetails";
+import { InteractiveCanvas } from "./components/InteractiveCanvas/InteractiveCanvas";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -34,15 +35,20 @@ export const App = () => {
     <Router>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Header />
         <Switch>
+          <Route path="/interactivecanvas">
+            <InteractiveCanvas />
+          </Route>
           <Route path="/accounts/create">
+            <Header />
             <CreateAccount />
           </Route>
           <Route path="/accounts/details/:id">
+            <Header />
             <AccountDetails />
           </Route>
           <Route path="/">
+            <Header />
             <Dashboard />
           </Route>
         </Switch>
