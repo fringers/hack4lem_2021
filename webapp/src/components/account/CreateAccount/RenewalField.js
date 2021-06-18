@@ -6,7 +6,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 
 const renewalPeriods = [
   ["none", "Jednorazowy"],
-  ["week", "Co tydzzień"],
+  ["week", "Co tydzień"],
   ["month", "Co miesiąc"],
   ["quarter", "Co kwartał"],
   ["year", "Co rok"],
