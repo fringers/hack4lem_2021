@@ -7,6 +7,7 @@ import { CategoryField } from "./CreateAccount/CategoryField";
 import { NameField } from "./CreateAccount/NameField";
 import { BudgetField } from "./CreateAccount/BudgetField";
 import { RenewalField } from "./CreateAccount/RenewalField";
+import { UsersList } from "./CreateAccount/UsersList";
 import Button from "@material-ui/core/Button";
 
 export const CreateAccount = () => {
@@ -47,6 +48,10 @@ export const CreateAccount = () => {
 
           <Grid item>
             <RenewalField onChange={setRenewal} />
+          </Grid>
+
+          <Grid item>
+            <UsersList />
           </Grid>
 
           <Grid item>
