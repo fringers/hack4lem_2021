@@ -1,12 +1,13 @@
 import { Paper, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+// TODO: @robi24 zakomentowałem te fragmenty, bo build się wywalał, bo nie były używane
+// import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  container: {},
-}));
+// const useStyles = makeStyles((theme) => ({
+//   container: {},
+// }));
 
 export const Amount = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>
