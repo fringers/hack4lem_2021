@@ -18,7 +18,9 @@ export const BudgetField = ({ onChange }) => {
       variant="outlined"
       placeholder="np. 1000"
       helperText="Przewidziany budżet, jaki będzie dostępny z tego konta."
-      endadornment={<InputAdornment position="end">PLN</InputAdornment>}
+      InputProps={{
+        endAdornment: <InputAdornment position="end">PLN</InputAdornment>,
+      }}
       value={value}
       onChange={handleChange}
     />

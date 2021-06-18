@@ -24,12 +24,12 @@ export const CategoryField = ({ onChange }) => {
   };
 
   return (
-    <FormControl>
-      <InputLabel id="category-label">Kategoria</InputLabel>
+    <FormControl variant="outlined">
+      <InputLabel htmlFor="category">Kategoria</InputLabel>
       <Select
-        labelId="category-label"
-        id="category"
+        label="Kategoria"
         variant="outlined"
+        name="category"
         value={value}
         onChange={handleChange}
       >

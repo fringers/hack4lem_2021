@@ -22,17 +22,17 @@ export const RenewalField = ({ onChange }) => {
   };
 
   return (
-    <FormControl>
-      <InputLabel id="renewal-label">Odnawianie</InputLabel>
+    <FormControl variant="outlined">
+      <InputLabel htmlFor="renewal-label">Odnawianie</InputLabel>
       <Select
-        labelId="renewal-label"
-        id="renewal"
+        name="renewal-label"
         variant="outlined"
+        label="Odnawianie"
         value={value}
         onChange={handleChange}
       >
         {renewalPeriods.map((c) => (
-          <MenuItem value={c[0]} key={c[0]}>
+          <MenuItem key={c[0]} value={c[0]}>
             {c[1]}
           </MenuItem>
         ))}
