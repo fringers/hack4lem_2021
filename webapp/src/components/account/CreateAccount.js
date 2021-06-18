@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
@@ -6,8 +7,24 @@ import { CategoryField } from "./CreateAccount/CategoryField";
 import { NameField } from "./CreateAccount/NameField";
 import { BudgetField } from "./CreateAccount/BudgetField";
 import { RenewalField } from "./CreateAccount/RenewalField";
+import Button from "@material-ui/core/Button";
 
 export const CreateAccount = () => {
+  const [category, setCategory] = useState("");
+  const [name, setName] = useState("");
+  const [budget, setBudget] = useState("");
+  const [renewal, setRenewal] = useState("");
+
+  const onSubmit = () => {
+    const request = {
+      category,
+      name,
+      budget,
+      renewal,
+    };
+    console.log(request);
+  };
+
   return (
     <Container>
       <Box pt={2} pb={2}>
@@ -17,19 +34,25 @@ export const CreateAccount = () => {
       <form noValidate autoComplete="off">
         <Grid container direction="column" spacing={2}>
           <Grid item>
-            <CategoryField />
+            <CategoryField onChange={setCategory} />
           </Grid>
 
           <Grid item>
-            <NameField />
+            <NameField onChange={setName} />
           </Grid>
 
           <Grid item>
-            <BudgetField />
+            <BudgetField onChange={setBudget} />
           </Grid>
 
           <Grid item>
-            <RenewalField />
+            <RenewalField onChange={setRenewal} />
+          </Grid>
+
+          <Grid item>
+            <Button variant="contained" color="primary" onClick={onSubmit}>
+              Stwórz konto
+            </Button>
           </Grid>
         </Grid>
       </form>

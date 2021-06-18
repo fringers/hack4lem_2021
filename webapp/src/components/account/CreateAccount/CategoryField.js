@@ -1,3 +1,4 @@
+import { useState } from "react";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -14,13 +15,26 @@ const categories = [
   ["services", "Usługi"],
 ];
 
-export const CategoryField = () => {
+export const CategoryField = ({ onChange }) => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    onChange(event.target.value);
+  };
+
   return (
-    <FormControl autoWidth>
+    <FormControl autowidth>
       <InputLabel id="category-label">Kategoria</InputLabel>
-      <Select labelId="category-label" id="category" variant="outlined">
+      <Select
+        labelId="category-label"
+        id="category"
+        variant="outlined"
+        value={value}
+        onChange={handleChange}
+      >
         {categories.map((c) => (
-          <MenuItem value={c[0]}>{c[1]}</MenuItem>
+          <MenuItem value={c[0]} key={c[0]}>{c[1]}</MenuItem>
         ))}
       </Select>
       <FormHelperText>
