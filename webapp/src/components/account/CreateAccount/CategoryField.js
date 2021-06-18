@@ -16,11 +16,13 @@ const categories = [
 
 export const CategoryField = () => {
   return (
-    <FormControl autoWidth>
-      <InputLabel id="category-label">Kategoria</InputLabel>
-      <Select labelId="category-label" id="category" variant="outlined">
+    <FormControl variant="outlined">
+      <InputLabel htmlFor="category">Kategoria</InputLabel>
+      <Select label="Kategoria" variant="outlined" name="category">
         {categories.map((c) => (
-          <MenuItem value={c[0]}>{c[1]}</MenuItem>
+          <MenuItem key={c[0]} value={c[0]}>
+            {c[1]}
+          </MenuItem>
         ))}
       </Select>
       <FormHelperText>

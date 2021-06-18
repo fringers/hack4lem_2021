@@ -14,11 +14,11 @@ const renewalPeriods = [
 
 export const RenewalField = () => {
   return (
-    <FormControl autoWidth>
+    <FormControl>
       <InputLabel id="renewal-label">Odnawianie</InputLabel>
       <Select labelId="renewal-label" id="renewal" variant="outlined">
         {renewalPeriods.map((c) => (
-          <MenuItem value={c[0]}>{c[1]}</MenuItem>
+          <MenuItem key={c[0]} value={c[0]}>{c[1]}</MenuItem>
         ))}
       </Select>
       <FormHelperText>Częstotliwość odnawiania budżetu</FormHelperText>
