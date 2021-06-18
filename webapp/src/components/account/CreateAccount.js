@@ -11,13 +11,21 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
 const categories = [
-  ["Restaurants", "Restauracje"],
-  ["Groceries", "Artykuły spożywcze"],
-  ["Health", "Zdrowie"],
-  ["Shopping", "Zakupy"],
-  ["Transport", "Transport"],
-  ["General", "Ogólne"],
-  ["Services", "Usługi"],
+  ["restaurants", "Restauracje"],
+  ["groceries", "Artykuły spożywcze"],
+  ["health", "Zdrowie"],
+  ["sshopping", "Zakupy"],
+  ["transport", "Transport"],
+  ["general", "Ogólne"],
+  ["services", "Usługi"],
+];
+
+const renewalPeriods = [
+  ["none", "Jednorazowy"],
+  ["week", "Co tydzzień"],
+  ["month", "Co miesiąc"],
+  ["quarter", "Co kwartał"],
+  ["year", "Co rok"],
 ];
 
 export const CreateAccount = () => {
@@ -65,6 +73,20 @@ export const CreateAccount = () => {
               helperText="Przewidziany budżet, jaki będzie dostępny z tego konta."
               endAdornment={<InputAdornment position="end">PLN</InputAdornment>}
             />
+          </Grid>
+
+          <Grid item>
+            <FormControl autoWidth>
+              <InputLabel id="renewal-label">Odnawianie</InputLabel>
+              <Select labelId="renewal-label" id="renewal" variant="outlined">
+                {renewalPeriods.map((c) => (
+                  <MenuItem value={c[0]}>{c[1]}</MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>
+                Częstotliwość odnawiania budżetu
+              </FormHelperText>
+            </FormControl>
           </Grid>
         </Grid>
       </form>
