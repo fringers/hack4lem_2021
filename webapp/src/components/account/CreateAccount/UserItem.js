@@ -20,29 +20,30 @@ export const UserItem = ({ own }) => {
               justify="space-between"
               alignItems="center"
             >
-              <Grid item>Jan Kowalski {own ? "(Ty)" : null}</Grid>
-
               <Grid item>
-                <IconButton size="small">
-                  <DeleteIcon />
-                </IconButton>
+                {own ? (
+                  "Jan Kowalski (Ty)"
+                ) : (
+                  <TextField
+                    id="budget"
+                    label="Email użytkownika"
+                    variant="outlined"
+                  />
+                )}
               </Grid>
+
+              {!own ? (
+                <Grid item>
+                  <IconButton size="small">
+                    <DeleteIcon />
+                  </IconButton>
+                </Grid>
+              ) : null}
             </Grid>
           </Grid>
 
           <Grid item>
-            <Grid
-              container
-              direction="row"
-              alignItems="center"
-            >
-              <Grid item>
-                <FormControlLabel
-                  control={<Checkbox name="test" />}
-                  label="Zezwalaj na wypłaty"
-                />
-              </Grid>
-
+            <Grid container direction="row" alignItems="center" spacing={1}>
               <Grid item>
                 <TextField
                   id="budget"
@@ -57,6 +58,13 @@ export const UserItem = ({ own }) => {
                       <InputAdornment position="end">%</InputAdornment>
                     ),
                   }}
+                />
+              </Grid>
+
+              <Grid item>
+                <FormControlLabel
+                  control={<Checkbox name="test" />}
+                  label="Zezwalaj na wypłaty"
                 />
               </Grid>
             </Grid>
