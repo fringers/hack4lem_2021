@@ -17,7 +17,14 @@ export const UsersList = () => {
       </Grid>
 
       <Grid item>
-        <UserItem />
+        <Grid container direction="column" spacing={1}>
+          <Grid item>
+            <UserItem own />
+          </Grid>
+          <Grid item>
+            <UserItem />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
