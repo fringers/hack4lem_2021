@@ -3,6 +3,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Header } from "./components/header/Header";
 import { Dashboard } from "./components/dashboard/Dashboard";
 import { CreateAccount } from "./components/account/CreateAccount";
+import { AccountDetails } from "./components/account/AccountDetails";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -37,6 +38,9 @@ export const App = () => {
         <Switch>
           <Route path="/accounts/create">
             <CreateAccount />
+          </Route>
+          <Route path="/accounts/details/:id">
+            <AccountDetails />
           </Route>
           <Route path="/">
             <Dashboard />
