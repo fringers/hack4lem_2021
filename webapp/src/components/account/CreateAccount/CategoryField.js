@@ -24,7 +24,7 @@ export const CategoryField = ({ onChange }) => {
   };
 
   return (
-    <FormControl autowidth>
+    <FormControl>
       <InputLabel id="category-label">Kategoria</InputLabel>
       <Select
         labelId="category-label"
@@ -34,7 +34,9 @@ export const CategoryField = ({ onChange }) => {
         onChange={handleChange}
       >
         {categories.map((c) => (
-          <MenuItem value={c[0]} key={c[0]}>{c[1]}</MenuItem>
+          <MenuItem value={c[0]} key={c[0]}>
+            {c[1]}
+          </MenuItem>
         ))}
       </Select>
       <FormHelperText>

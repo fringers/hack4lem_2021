@@ -22,7 +22,7 @@ export const RenewalField = ({ onChange }) => {
   };
 
   return (
-    <FormControl autowidth>
+    <FormControl>
       <InputLabel id="renewal-label">Odnawianie</InputLabel>
       <Select
         labelId="renewal-label"
@@ -37,7 +37,7 @@ export const RenewalField = ({ onChange }) => {
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText>Częstotliwość odnawiania budżetu</FormHelperText>
+      <FormHelperText>Częstotliwość odnawiania budżetu.</FormHelperText>
     </FormControl>
   );
 };

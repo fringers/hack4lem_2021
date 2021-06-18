@@ -16,7 +16,7 @@ export const NameField = ({ onChange }) => {
       variant="outlined"
       placeholder="np. 'Opłata za wynajem mieszkania'"
       helperText="Dzięki nazwie łatwiej rozpoznasz, jakie środki znadjują się na tym koncie."
-      fullwidth
+      fullWidth
       value={value}
       onChange={handleChange}
     />
