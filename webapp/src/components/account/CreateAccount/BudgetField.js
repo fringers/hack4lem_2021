@@ -1,7 +1,15 @@
+import { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
-export const BudgetField = () => {
+export const BudgetField = ({ onChange }) => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    onChange(event.target.value);
+  };
+
   return (
     <TextField
       id="budget"
@@ -13,6 +21,8 @@ export const BudgetField = () => {
       InputProps={{
         endAdornment: <InputAdornment position="end">PLN</InputAdornment>,
       }}
+      value={value}
+      onChange={handleChange}
     />
   );
 };
