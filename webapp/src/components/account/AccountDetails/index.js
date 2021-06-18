@@ -3,8 +3,9 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
-import { Chart } from "./Chart";
 import { PaymentCard } from "./PaymentCard";
+import { People } from "./People";
+import { Amount } from "./Amount";
 
 export const AccountDetails = () => {
   const { id } = useParams();
@@ -23,7 +24,8 @@ export const AccountDetails = () => {
         <Typography variant="h5">Szczegóły konta {id}</Typography>
       </Box>
 
-      <Chart />
+      <Amount />
+      <People />
       <PaymentCard />
     </Container>
   );

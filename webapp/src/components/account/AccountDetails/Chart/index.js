@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const data = {
-  labels: ["Red", "Blue", "Yellow"],
+  labels: ["Ali Connors", "Travis Howard", "Sandra Adams"],
   datasets: [
     {
       label: "My First Dataset",
