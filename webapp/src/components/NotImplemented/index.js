@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 export const NotImplemented = ({ open, onClose }) => {
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Ta funkcjonalność niestey nie została jeszcze zaimplementowan</DialogTitle>
+      <DialogTitle>Ta funkcjonalność niestey nie została jeszcze zaimplementowana</DialogTitle>
       <Box px={3}>
         <p>
           Czas był ograniczony i nie byliśmy w stanie zaimplmentować wszystkich
