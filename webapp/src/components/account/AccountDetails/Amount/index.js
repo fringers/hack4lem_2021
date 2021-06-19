@@ -4,6 +4,7 @@ import { Paper, Typography, Button, Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
 import { Blik } from "./Blik";
+import { NotImplemented } from "../../../NotImplemented";
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   container: {
@@ -42,6 +43,8 @@ export const Amount = ({ available, name = "" }) => {
   const classes = useStyles();
 
   const [blikOpen, setBlikOpen] = useState(false);
+  const [transactionNotImplementedOpen, setTransactionNotImplementedOpen] =
+    useState(false);
 
   const handleBlikOpen = () => {
     setBlikOpen(true);
@@ -49,6 +52,14 @@ export const Amount = ({ available, name = "" }) => {
 
   const handleBlikClose = () => {
     setBlikOpen(false);
+  };
+
+  const handleTransactionNotImplementedOpenOpen = () => {
+    setTransactionNotImplementedOpen(true);
+  };
+
+  const handleTransactionNotImplementedOpenClose = () => {
+    setTransactionNotImplementedOpen(false);
   };
 
   return (
@@ -85,9 +96,14 @@ export const Amount = ({ available, name = "" }) => {
               className={classes.marginButton}
               variant="contained"
               color="primary"
+              onClick={handleTransactionNotImplementedOpenOpen}
             >
               Przelew
             </Button>
+            <NotImplemented
+              open={transactionNotImplementedOpen}
+              onClose={handleTransactionNotImplementedOpenClose}
+            />
             <Button
               variant="contained"
               color="primary"
