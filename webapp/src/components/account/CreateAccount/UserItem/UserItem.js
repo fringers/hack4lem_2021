@@ -19,7 +19,6 @@ export const UserItem = ({ own, value, onChange, onDelete }) => {
       blockPayment,
     };
     onChange(user);
-    // eslint-disable-next-line
   }, [email, contribution, blockPayment]);
 
   return (

@@ -9,5 +9,5 @@ export const categories = [
 ];
 
 
-export const getCategoryText = (key) => // eslint-disable-next-line
+export const getCategoryText = (key) =>
   categories.find((rp) => rp[0] == key)[1];
