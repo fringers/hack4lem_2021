@@ -18,8 +18,16 @@ export const users = [
   {
     id: 3,
     email: "sandra.adams@gmail.com",
-    fullName: "Marta Nowak",
+    fullName: "Marta Duda",
     avatar: "https://material-ui.com/static/images/avatar/3.jpg",
+    bankAvatar:
+      "https://play-lh.googleusercontent.com/rvyT-isZRd9AxtgK20HG-uG6IVarqEDJ_sivrkrD7eZCiEMMSVvMCrqFBB4d_Nt-47M",
+  },
+  {
+    id: 4,
+    email: "genowefa.nowak@gmail.com",
+    fullName: "Genowefa Nowak",
+    avatar: "https://randomuser.me/api/portraits/women/14.jpg",
     bankAvatar:
       "https://play-lh.googleusercontent.com/rvyT-isZRd9AxtgK20HG-uG6IVarqEDJ_sivrkrD7eZCiEMMSVvMCrqFBB4d_Nt-47M",
   },
