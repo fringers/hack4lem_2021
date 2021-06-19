@@ -35,6 +35,7 @@ export const UsersList = ({ onChange }) => {
   const addUser = () => {
     if (!addEmail || !addEmail.length) return;
     setUsers([...users, emptyUser(addEmail)]);
+    setAddEmail("");
   };
 
   const onMainUserUpdate = (data) => {
