@@ -77,7 +77,7 @@ export const PaymentCard = ({ account }) => {
 
   return (
     <div className={classes.container}>
-      <Typography variant="h5">Karty wirtualne</Typography>
+      <Typography variant="h5">Wirtualna karta</Typography>
       <Paper>
         <Box p={2}>
           <Grid container spacing={2}>
