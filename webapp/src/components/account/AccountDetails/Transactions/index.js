@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -12,6 +13,8 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ReceiptIcon from "@material-ui/icons/Receipt";
+
+import { InvoiceDialog } from "./InvoiceDialog";
 
 const useStyles = makeStyles(({ spacing, palette }) => ({
   container: {
@@ -28,6 +31,7 @@ const useStyles = makeStyles(({ spacing, palette }) => ({
 
 export const Transactions = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={classes.container}>
@@ -60,7 +64,11 @@ export const Transactions = () => {
               secondary={<Typography variant="body1">1480.00 PLN</Typography>}
             />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
+              <IconButton
+                onClick={() => setOpen(true)}
+                edge="end"
+                aria-label="delete"
+              >
                 <ReceiptIcon />
               </IconButton>
             </ListItemSecondaryAction>
@@ -87,7 +95,11 @@ export const Transactions = () => {
               secondary={<Typography variant="body1">1200.20 PLN</Typography>}
             />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
+              <IconButton
+                onClick={() => setOpen(true)}
+                edge="end"
+                aria-label="delete"
+              >
                 <ReceiptIcon />
               </IconButton>
             </ListItemSecondaryAction>
@@ -114,7 +126,11 @@ export const Transactions = () => {
               secondary={<Typography variant="body1">1185.20 PLN</Typography>}
             />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
+              <IconButton
+                onClick={() => setOpen(true)}
+                edge="end"
+                aria-label="delete"
+              >
                 <ReceiptIcon />
               </IconButton>
             </ListItemSecondaryAction>
@@ -141,13 +157,18 @@ export const Transactions = () => {
               secondary={<Typography variant="body1">1175.20 PLN</Typography>}
             />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
+              <IconButton
+                onClick={() => setOpen(true)}
+                edge="end"
+                aria-label="delete"
+              >
                 <ReceiptIcon />
               </IconButton>
             </ListItemSecondaryAction>
           </ListItem>
         </List>
       </Paper>
+      <InvoiceDialog open={open} setOpen={setOpen} />
     </div>
   );
 };
