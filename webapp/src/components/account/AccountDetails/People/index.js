@@ -7,6 +7,7 @@ import {
   ListItemAvatar,
   ListItemText,
   Grid,
+  Tooltip,
 } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
@@ -35,6 +36,10 @@ const useStyles = makeStyles(({ spacing }) => ({
     alignSelf: "flex-end",
     marginBottom: spacing(-2),
   },
+  listItemText: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
 }));
 
 export const People = ({ users = [] }) => {
@@ -45,15 +50,15 @@ export const People = ({ users = [] }) => {
       <Typography variant="h5">Osoby</Typography>
       <Paper>
         <Grid container>
-          <Grid item xs={12} md={8} sm={8}>
+          <Grid item xs={12} md={8} sm={7}>
             <Chart />
           </Grid>
-          <Grid item xs={12} md={4} sm={4}>
+          <Grid item xs={12} md={4} sm={5}>
             <List classes={{ root: classes.listRoot }}>
-              {users.map(({ id }) => {
+              {users.map(({ id, contribution, used }) => {
                 const { fullName, avatar, bankAvatar } = getUserById(id);
                 return (
-                  <ListItem>
+                  <ListItem key={id}>
                     <ListItemAvatar>
                       <AvatarGroup>
                         <Avatar
@@ -69,10 +74,37 @@ export const People = ({ users = [] }) => {
                       </AvatarGroup>
                     </ListItemAvatar>
                     <ListItemText
-                      component="div"
                       primary={
                         <Typography component="p" variant="body1">
                           {fullName}
+                        </Typography>
+                      }
+                    />
+                    <ListItemText
+                      classes={{ root: classes.listItemText }}
+                      primary={
+                        <Typography component="p" variant="body1">
+                          <Tooltip title="Wpłacił">
+                            <Typography
+                              component="span"
+                              variant="subtitle2"
+                              color="primary"
+                              aria-label="Wpłacił"
+                            >
+                              {contribution}
+                            </Typography>
+                          </Tooltip>
+                          /
+                          <Tooltip title="Wydał">
+                            <Typography
+                              component="span"
+                              variant="subtitle2"
+                              aria-label="Wydał"
+                              color="secondary"
+                            >
+                              {used}
+                            </Typography>
+                          </Tooltip>
                         </Typography>
                       }
                     />
