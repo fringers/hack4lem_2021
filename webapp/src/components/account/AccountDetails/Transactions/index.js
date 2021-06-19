@@ -75,7 +75,7 @@ export const Transactions = () => {
                 src="https://material-ui.com/static/images/avatar/1.jpg"
               />
             </ListItemAvatar>
-            <ListItemText primary="Karta płatnicza" secondary="Sty 8, 2021" />
+            <ListItemText primary="Blik" secondary="Sty 8, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-300.80 PLN</Typography>}
@@ -129,7 +129,7 @@ export const Transactions = () => {
                 src="https://material-ui.com/static/images/avatar/2.jpg"
               />
             </ListItemAvatar>
-            <ListItemText primary="Karta płatnicza" secondary="Sty 1, 2021" />
+            <ListItemText primary="Przelew" secondary="Sty 1, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-10.80 PLN</Typography>}
