@@ -5,6 +5,7 @@ import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
 import { Blik } from "./Blik";
 import { NotImplemented } from "../../../NotImplemented";
+import { getUserById } from "../../../../data/users";
 
 import { users } from "../../../../data/users";
 
@@ -41,7 +42,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
 }));
 
-export const Amount = ({ available, name = "" }) => {
+export const Amount = ({ available, name = "", usersInfo }) => {
   const classes = useStyles();
 
   const [blikOpen, setBlikOpen] = useState(false);
@@ -64,6 +65,8 @@ export const Amount = ({ available, name = "" }) => {
     setTransactionNotImplementedOpen(false);
   };
 
+  const users = usersInfo.map((u) => getUserById(u.id));
+
   return (
     <>
       <Paper className={classes.container}>
@@ -80,9 +83,9 @@ export const Amount = ({ available, name = "" }) => {
         </div>
         <div className={classes.row}>
           <AvatarGroup className={classes.avatarGroup}>
-            <Avatar alt={users[0].fullName} src={users[0].avatar} />
-            <Avatar alt={users[1].fullName} src={users[1].avatar} />
-            <Avatar alt={users[2].fullName} src={users[2].avatar} />
+            {users.map((u) => (
+              <Avatar alt={u.fullName} src={u.avatar} />
+            ))}
           </AvatarGroup>
           <div className={clsx(classes.right, classes.marginTop)}>
             <Button
