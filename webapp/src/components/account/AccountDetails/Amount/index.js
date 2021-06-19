@@ -49,7 +49,7 @@ export const Amount = ({ name = "" }) => {
           <div>
             <Typography variant="h5">Dostępne środki</Typography>
             <Typography component="span" variant="h4" color="secondary">
-              140 PLN
+              140.00 PLN
             </Typography>
           </div>
         </div>

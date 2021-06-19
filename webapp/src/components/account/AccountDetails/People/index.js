@@ -91,7 +91,7 @@ export const People = ({ users = [] }) => {
                               color="primary"
                               aria-label="Wpłacił"
                             >
-                              {contribution}
+                              {contribution.toFixed(2)}
                             </Typography>
                           </Tooltip>
                           /
@@ -102,7 +102,7 @@ export const People = ({ users = [] }) => {
                               aria-label="Wydał"
                               color="secondary"
                             >
-                              {used}
+                              {used.toFixed(2)}
                             </Typography>
                           </Tooltip>
                         </Typography>

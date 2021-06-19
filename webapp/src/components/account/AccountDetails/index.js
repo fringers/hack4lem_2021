@@ -15,7 +15,7 @@ export const AccountDetails = () => {
     <Container>
       <Amount name={data.name} />
       <People users={data.users} />
-      <PaymentCard account={getAccountById(1)} />
+      <PaymentCard account={data} />
       <Transactions />
     </Container>
   );

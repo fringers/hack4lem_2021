@@ -43,7 +43,7 @@ export const CardPreviewItem = ({ account }) => {
 
         <Box position="absolute" pl={1} pt={0.5}>
           <Typography variant="h6" className={classes.progressText}>
-            {account.available}/{account.budget} PLN
+            {account.available.toFixed(2)}/{account.budget.toFixed(2)} PLN
           </Typography>
         </Box>
 
