@@ -1,30 +1,72 @@
-import { Paper, Typography } from "@material-ui/core";
-// TODO: @robi24 zakomentowałem te fragmenty, bo build się wywalał, bo nie były używane
-// import { makeStyles } from "@material-ui/core";
+import clsx from "clsx";
+import { Paper, Typography, Grid, Button, Avatar } from "@material-ui/core";
+import { AvatarGroup } from "@material-ui/lab";
+import { makeStyles } from "@material-ui/core";
 
-// const useStyles = makeStyles((theme) => ({
-//   container: {},
-// }));
+const useStyles = makeStyles(({ spacing }) => ({
+  container: {
+    marginTop: spacing(2),
+    padding: spacing(2, 4),
+  },
+  right: {
+    float: "right",
+    textAlign: "right",
+  },
+  marginRight: {
+    marginRight: spacing(2),
+  },
+  marginTop: {
+    marginTop: spacing(2),
+  },
+}));
 
-export const Amount = () => {
-  // const classes = useStyles();
+export const Amount = ({ name = "" }) => {
+  const classes = useStyles();
 
   return (
     <>
-      <Typography variant="subtitle1">Statystyki (to będzie ładniej!!)</Typography>
-      <Paper>
-        <Typography variant="h3">
-          Wydałeś{" "}
-          <Typography component="span" variant="h2" color="secondary">
-            40 PLN
-          </Typography>
-        </Typography>
-        <Typography variant="h3">
-          Wole środki{" "}
-          <Typography component="span" variant="h2" color="secondary">
-            140 PLN
-          </Typography>
-        </Typography>
+      <Paper className={classes.container}>
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography variant="h4" component="span" color="primary">
+              {name}
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className={classes.right}>
+            <Typography variant="h5">Dostępne środki</Typography>
+            <Typography component="span" variant="h4" color="secondary">
+              140 PLN
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <AvatarGroup max={4}>
+              <Avatar
+                alt="Remy Sharp"
+                src="https://material-ui.com/static/images/avatar/1.jpg"
+              />
+              <Avatar
+                alt="Travis Howard"
+                src="https://material-ui.com/static/images/avatar/2.jpg"
+              />
+              <Avatar
+                alt="Cindy Baker"
+                src="https://material-ui.com/static/images/avatar/3.jpg"
+              />
+            </AvatarGroup>
+          </Grid>
+          <Grid item xs={6} className={clsx(classes.right, classes.marginTop)}>
+            <Button
+              className={classes.marginRight}
+              variant="contained"
+              color="primary"
+            >
+              Przelew
+            </Button>
+            <Button variant="contained" color="primary">
+              Blik
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
     </>
   );

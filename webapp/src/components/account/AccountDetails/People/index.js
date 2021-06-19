@@ -10,8 +10,20 @@ import {
   Box,
   LinearProgress,
 } from "@material-ui/core";
+import { Pie } from "react-chartjs-2";
 import { makeStyles } from "@material-ui/core";
-import { Chart } from "../Chart";
+
+const data = {
+  labels: ["Wydano", "Pozostałe środki"],
+  datasets: [
+    {
+      label: "Wydatki vs Pozostałe środki",
+      data: [300, 75],
+      backgroundColor: ["rgb(255, 99, 132)", "rgb(0, 53, 116)"],
+      hoverOffset: 4,
+    },
+  ],
+};
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: { marginTop: spacing(2) },
@@ -37,9 +49,12 @@ export const People = () => {
 
   return (
     <div className={classes.container}>
-      <Typography variant="subtitle1">Osoby</Typography>
+      <Typography variant="h5">Osoby</Typography>
       <Paper>
         <Grid container>
+          <Grid item xs={6}>
+            <Pie data={data} options={{ maintainAspectRatio: false }} />
+          </Grid>
           <Grid item xs={6}>
             <List>
               <ListItem alignItems="flex-start">
@@ -140,9 +155,6 @@ export const People = () => {
                 />
               </ListItem>
             </List>
-          </Grid>
-          <Grid item xs={6}>
-            <Chart />
           </Grid>
         </Grid>
       </Paper>
