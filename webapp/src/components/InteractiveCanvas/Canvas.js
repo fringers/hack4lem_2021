@@ -1,9 +1,4 @@
 import React from "react";
-import WelcomePage from "./pages/WelcomePage";
-import CategoryBestsellersPage from "./pages/CategoryBestsellersPage";
-import BookDetailsPage from "./pages/BookDetailsPage";
-import BackgroundContainer from "./components/BackgroundContainer";
-
 import { sceneTypeConstant } from "./helper/constant";
 
 class Canvas extends React.Component {
@@ -24,7 +19,7 @@ class Canvas extends React.Component {
     this.state = {
       marginTop: "0px",
       sceneType: sceneTypeConstant.WELCOME,
-      params: [],
+      params: null,
     };
   }
 
@@ -63,50 +58,30 @@ class Canvas extends React.Component {
   };
 
   categoryBestsellersScene = (params) => {
-    this.setState((state) => {
-      return {
-        sceneType: sceneTypeConstant.CATEGORY_BESTSELLERS,
-      };
+    this.setState({
+      sceneType: sceneTypeConstant.CATEGORY_BESTSELLERS,
+      params,
     });
   };
 
   bookDetailsScene = (params) => {
-    this.setState((state) => {
-      return {
-        sceneType: sceneTypeConstant.BOOK_DETAILS,
-      };
+    this.setState({
+      sceneType: sceneTypeConstant.BOOK_DETAILS,
+      params,
     });
   };
 
   renderErrorScene = () => {
-    return (
-      <BackgroundContainer marginTop={this.state.marginTop}>
-        <h1>This page is unavailable, please try again.</h1>
-      </BackgroundContainer>
-    );
+    return <h1>This page is unavailable, please try again.</h1>;
   };
 
   render() {
     const { sceneType } = this.state;
-    if (sceneType === sceneTypeConstant.WELCOME)
-      return (
-        <BackgroundContainer marginTop={this.state.marginTop}>
-          <WelcomePage />
-        </BackgroundContainer>
-      );
+    if (sceneType === sceneTypeConstant.WELCOME) return <h1>Welcome!!!</h1>;
     if (sceneType === sceneTypeConstant.CATEGORY_BESTSELLERS)
-      return (
-        <BackgroundContainer marginTop={this.state.marginTop}>
-          <CategoryBestsellersPage />
-        </BackgroundContainer>
-      );
+      return <h1>CATEGORY_BESTSELLERS page</h1>;
     if (sceneType === sceneTypeConstant.BOOK_DETAILS)
-      return (
-        <BackgroundContainer marginTop={this.state.marginTop}>
-          <BookDetailsPage />
-        </BackgroundContainer>
-      );
-
+      return <h1>CATEGORY_BESTSELLERS page</h1>;
     return this.renderErrorScene();
   }
 }
