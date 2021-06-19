@@ -6,6 +6,7 @@ export const categories = [
   ["transport", "Transport"],
   ["general", "Ogólne"],
   ["services", "Usługi"],
+  ["", "-"],
 ];
 
 

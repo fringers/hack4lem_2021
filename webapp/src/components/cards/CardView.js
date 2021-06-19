@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "4px 0",
     color: "white",
     borderRadius: "4px",
+    maxWidth: "100%",
   },
   textSeparator: {
     paddingLeft: "8px",
@@ -59,7 +60,14 @@ export const CardView = ({ account, bottomSlot }) => {
           justify="space-between"
           className={classes.contentGrid}
         >
-          <Grid item>
+          <Grid
+            item
+            style={{
+              maxWidth: "100%",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             <Box className={classes.textBg}>
               <Typography display="inline" variant="body2">
                 {getCategoryText(account.category)}
@@ -76,7 +84,16 @@ export const CardView = ({ account, bottomSlot }) => {
               </Typography>
             </Box>
 
-            <Box className={classes.textBg}>
+            <Box
+              className={classes.textBg}
+              display={{ xs: "block", sm: "none" }}
+            >
+              <Typography variant="body2">{account.name}</Typography>
+            </Box>
+            <Box
+              className={classes.textBg}
+              display={{ xs: "none", sm: "block" }}
+            >
               <Typography variant="h6">{account.name}</Typography>
             </Box>
           </Grid>

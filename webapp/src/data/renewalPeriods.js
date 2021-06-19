@@ -4,6 +4,7 @@ export const renewalPeriods = [
   ["month", "Co miesiąc"],
   ["quarter", "Co kwartał"],
   ["year", "Co rok"],
+  ["", "-"],
 ];
 
 export const getRenewalPeriodText = (key) =>
