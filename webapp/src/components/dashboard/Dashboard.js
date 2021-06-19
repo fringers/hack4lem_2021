@@ -14,7 +14,7 @@ export const Dashboard = () => {
       <Box pt={2}>
         <Grid container spacing={2}>
           {accounts.map((acc) => (
-            <Grid item key={acc.id} sm={12} md={6} lg={4}>
+            <Grid item key={acc.id} xs={12} md={6} lg={4}>
               <CardPreviewItem account={acc} />
             </Grid>
           ))}
