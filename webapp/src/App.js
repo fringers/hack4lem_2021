@@ -29,8 +29,8 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiCssBaseline: {
-      '@global': {
-        '@font-face': [newFont],
+      "@global": {
+        "@font-face": [newFont],
       },
     },
   },
@@ -58,27 +58,29 @@ const theme = createMuiTheme({
 
 export const App = () => {
   return (
-    <Router>
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <Switch>
-          <Route path="/interactivecanvas">
-            <InteractiveCanvas />
-          </Route>
-          <Route path="/accounts/create">
-            <Header />
-            <CreateAccount />
-          </Route>
-          <Route path="/accounts/details/:id">
-            <Header />
-            <AccountDetails />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Dashboard />
-          </Route>
-        </Switch>
-      </ThemeProvider>
-    </Router>
+    <main>
+      <Router>
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+          <Switch>
+            <Route path="/interactivecanvas">
+              <InteractiveCanvas />
+            </Route>
+            <Route path="/accounts/create">
+              <Header />
+              <CreateAccount />
+            </Route>
+            <Route path="/accounts/details/:id">
+              <Header />
+              <AccountDetails />
+            </Route>
+            <Route path="/">
+              <Header />
+              <Dashboard />
+            </Route>
+          </Switch>
+        </ThemeProvider>
+      </Router>
+    </main>
   );
 };

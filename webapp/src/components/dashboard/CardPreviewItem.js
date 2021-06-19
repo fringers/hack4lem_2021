@@ -8,7 +8,7 @@ import { getUserById } from "../../data/users";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import { CardView } from "../cards/CardView";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(({ spacing, palette }) => ({
   progressBoxWrapper: {
     height: 40,
   },
@@ -16,13 +16,17 @@ const useStyles = makeStyles((theme) => ({
     height: 40,
     borderRadius: 8,
   },
+  pb: {
+    backgroundColor: palette.primary.light,
+  },
   progressText: {
+    textShadow: "1px 1px #000000",
     color: "white",
     fontSize: 20,
   },
   avatar: {
-    width: theme.spacing(4),
-    height: theme.spacing(4),
+    width: spacing(4),
+    height: spacing(4),
   },
 }));
 
@@ -38,7 +42,11 @@ export const CardPreviewItem = ({ account }) => {
           <LinearProgress
             variant="determinate"
             value={percent}
+            aria-label={`Progress bar ${account.name}`}
+            aria-describedby={percent}
+            aria-busy={percent !== 100 ? "true" : "false"}
             className={classes.progressBar}
+            classes={{ determinate: classes.pb }}
           />
         </Box>
         <Box position="absolute" pl={1} pt={0.5}>

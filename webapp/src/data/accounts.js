@@ -95,7 +95,7 @@ export const accounts = [
     renewalPeriod: "month",
     name: "Na codzienne zakupy",
     budget: 2000.00,
-    available: 121.56,
+    available: 421.56,
     users: [
       {
         id: 1,
@@ -106,7 +106,7 @@ export const accounts = [
       {
         id: 2,
         contribution: 20,
-        used: 1678.45,
+        used: 1378.45,
         blockPayment: false,
       },
     ],

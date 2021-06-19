@@ -3,6 +3,8 @@ import { Paper, Typography, Button, Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
 
+import { users } from "../../../../data/users";
+
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   container: {
     display: "flex",
@@ -55,18 +57,9 @@ export const Amount = ({ available, name = "" }) => {
         </div>
         <div className={classes.row}>
           <AvatarGroup className={classes.avatarGroup}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://material-ui.com/static/images/avatar/1.jpg"
-            />
-            <Avatar
-              alt="Travis Howard"
-              src="https://material-ui.com/static/images/avatar/2.jpg"
-            />
-            <Avatar
-              alt="Cindy Baker"
-              src="https://material-ui.com/static/images/avatar/3.jpg"
-            />
+            <Avatar alt={users[0].fullName} src={users[0].avatar} />
+            <Avatar alt={users[1].fullName} src={users[1].avatar} />
+            <Avatar alt={users[2].fullName} src={users[2].avatar} />
           </AvatarGroup>
           <div className={clsx(classes.right, classes.marginTop)}>
             <Button

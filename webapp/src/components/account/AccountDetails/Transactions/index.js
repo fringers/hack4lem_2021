@@ -15,6 +15,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 
 import { InvoiceDialog } from "./InvoiceDialog";
+import { users } from "../../../../data/users";
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {
@@ -47,7 +48,10 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
+              <Avatar
+                src={users[0].avatar}
+                alt={`zdjęcia użytkownia ${users[0].fullName}`}
+              />
             </ListItemAvatar>
             <ListItemText primary="Karta" secondary="Sty 9, 2021" />
             <ListItemText
@@ -73,7 +77,10 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
+              <Avatar
+                src={users[0].avatar}
+                alt={`zdjęcia użytkownia ${users[0].fullName}`}
+              />
             </ListItemAvatar>
             <ListItemText primary="Blik" secondary="Sty 8, 2021" />
             <ListItemText
@@ -99,7 +106,10 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar src="https://material-ui.com/static/images/avatar/3.jpg" />
+              <Avatar
+                src={users[2].avatar}
+                alt={`zdjęcia użytkownia ${users[2].fullName}`}
+              />
             </ListItemAvatar>
             <ListItemText primary="Karta" secondary="Sty 3, 2021" />
             <ListItemText
@@ -125,7 +135,10 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
+              <Avatar
+                src={users[1].avatar}
+                alt={`zdjęcia użytkownia ${users[1].fullName}`}
+              />
             </ListItemAvatar>
             <ListItemText primary="Przelew" secondary="Sty 1, 2021" />
             <ListItemText
