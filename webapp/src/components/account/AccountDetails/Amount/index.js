@@ -36,7 +36,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
 }));
 
-export const Amount = ({ name = "" }) => {
+export const Amount = ({ available, name = "" }) => {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,7 @@ export const Amount = ({ name = "" }) => {
           <div>
             <Typography variant="h5">Dostępne środki</Typography>
             <Typography component="span" variant="h4" color="secondary">
-              140 PLN
+              {available} PLN
             </Typography>
           </div>
         </div>
