@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 import { CardView } from "../../../cards/CardView";
+import { NotImplemented } from "../../../NotImplemented";
+import { useState } from "react";
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {
@@ -23,6 +25,17 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 export const PaymentCard = ({ account }) => {
   const classes = useStyles();
+
+  const [transactionNotImplementedOpen, setTransactionNotImplementedOpen] =
+    useState(false);
+
+  const handleTransactionNotImplementedOpenOpen = () => {
+    setTransactionNotImplementedOpen(true);
+  };
+
+  const handleTransactionNotImplementedOpenClose = () => {
+    setTransactionNotImplementedOpen(false);
+  };
 
   const CardNumbers = () => (
     <Box py={0.5}>
@@ -88,15 +101,27 @@ export const PaymentCard = ({ account }) => {
             <Grid item xs={12} md={6} lg={7}>
               <Grid container spacing={2}>
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleTransactionNotImplementedOpenOpen}
+                  >
                     Generuj nową
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="contained" color="secondary">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={handleTransactionNotImplementedOpenOpen}
+                  >
                     Dezaktywuj
                   </Button>
                 </Grid>
+                <NotImplemented
+                  open={transactionNotImplementedOpen}
+                  onClose={handleTransactionNotImplementedOpenClose}
+                />
               </Grid>
             </Grid>
           </Grid>
