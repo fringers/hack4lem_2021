@@ -26,14 +26,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const BudgetPreviewItem = ({ id, name, budget, available }) => {
+export const BudgetPreviewItem = ({ account }) => {
   const classes = useStyles();
 
-  const percent = (available * 100) / budget;
+  const percent = (account.available * 100) / account.budget;
 
   return (
     <Card>
-      <CardActionArea component={Link} to={`/accounts/details/${id}`}>
+      <CardActionArea component={Link} to={`/accounts/details/${account.id}`}>
         <CardContent>
           <Box>
             <Typography display="inline" variant="body2">
@@ -52,7 +52,7 @@ export const BudgetPreviewItem = ({ id, name, budget, available }) => {
           </Box>
 
           <Box>
-            <Typography variant="h6">{name}</Typography>
+            <Typography variant="h6">{account.name}</Typography>
           </Box>
 
           <Box py={1}>
@@ -67,7 +67,7 @@ export const BudgetPreviewItem = ({ id, name, budget, available }) => {
 
               <Box position="absolute" pl={1}>
                 <Typography variant="body1" className={classes.progressText}>
-                  {available}/{budget} PLN
+                  {account.available}/{account.budget} PLN
                 </Typography>
               </Box>
 
