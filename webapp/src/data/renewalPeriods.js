@@ -4,9 +4,7 @@ export const renewalPeriods = [
   ["month", "Co miesiąc"],
   ["quarter", "Co kwartał"],
   ["year", "Co rok"],
-  ["", "-"],
 ];
 
 export const getRenewalPeriodText = (key) =>
-  renewalPeriods.find((rp) => rp[0] == key)[1];
-  
+  !key ? "-" : renewalPeriods.find((rp) => rp[0] == key)[1];

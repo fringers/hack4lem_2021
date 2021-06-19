@@ -25,44 +25,41 @@ export const UserItem = ({ own, value, onChange, onDelete }) => {
     <Paper variant="outlined">
       <Box px={3} py={2}>
         <Grid container direction="column" spacing={1}>
-          <Grid item>
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              alignItems="center"
-            >
-              <Grid item>
-                {own ? (
-                  "Jan Kowalski (Ty)"
-                ) : (
-                  <EmailField value={email} onChange={setEmail} />
-                )}
-              </Grid>
-
-              {!own ? (
-                <Grid item>
-                  <DeleteButton onClick={onDelete} />
-                </Grid>
-              ) : null}
+          <Grid
+            item
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item>
+              {own ? (
+                "Jan Kowalski (Ty)"
+              ) : (
+                <EmailField value={email} onChange={setEmail} />
+              )}
             </Grid>
+
+            {!own ? (
+              <Grid item>
+                <DeleteButton onClick={onDelete} />
+              </Grid>
+            ) : null}
           </Grid>
 
-          <Grid item>
-            <Grid container direction="row" alignItems="center" spacing={2}>
-              <Grid item>
-                <ContributionField
-                  value={contribution}
-                  onChange={setContribution}
-                />
-              </Grid>
+          <Grid item container direction="row" alignItems="center" spacing={2}>
+            <Grid item>
+              <ContributionField
+                value={contribution}
+                onChange={setContribution}
+              />
+            </Grid>
 
-              <Grid item>
-                <BlockPaymentField
-                  value={blockPayment}
-                  onChange={setBlockPayment}
-                />
-              </Grid>
+            <Grid item>
+              <BlockPaymentField
+                value={blockPayment}
+                onChange={setBlockPayment}
+              />
             </Grid>
           </Grid>
         </Grid>
