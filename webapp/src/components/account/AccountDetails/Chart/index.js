@@ -15,7 +15,7 @@ export const Chart = () => {
     <Container className={classes.container}>
       <Bar
         data={chartData}
-        height={400}
+        height={300}
         options={{ maintainAspectRatio: false }}
       />
     </Container>
