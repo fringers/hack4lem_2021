@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { PaymentCard } from "./PaymentCard";
 import { People } from "./People";
+import { Chart } from "./Chart";
 import { Amount } from "./Amount";
 
 export const AccountDetails = () => {
@@ -20,12 +21,14 @@ export const AccountDetails = () => {
 
   return (
     <Container>
-      <Box pt={2}>
+      {/* <Box pt={2}>
         <Typography variant="h5">Szczegóły konta {id}</Typography>
-      </Box>
+      </Box> */}
 
-      <Amount />
+      <Amount name={"Restauracje"} />
       <People />
+      <Chart />
+
       <PaymentCard />
     </Container>
   );
