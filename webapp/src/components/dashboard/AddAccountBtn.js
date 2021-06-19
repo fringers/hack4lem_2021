@@ -10,7 +10,7 @@ export const AddAccountBtn = () => {
       component={Link}
       to="/accounts/create"
     >
-      <Add /> Create account
+      <Add /> Dodaj konto
     </Button>
   );
 };
