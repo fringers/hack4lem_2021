@@ -113,4 +113,4 @@ export const accounts = [
   },
 ];
 
-export const getAcountById = (id) => accounts.find((u) => u.id == id);
+export const getAccountById = (id) => accounts.find((u) => u.id == id);

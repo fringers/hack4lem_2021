@@ -6,6 +6,7 @@ import { People } from "./People";
 // import { Chart } from "./Chart";
 import { Amount } from "./Amount";
 import { Transactions } from "./Transactions";
+import { getAccountById } from "../../../data/accounts";
 
 export const AccountDetails = () => {
   // const { id } = useParams();
@@ -26,9 +27,8 @@ export const AccountDetails = () => {
 
       <Amount name={"Restauracje"} />
       <People />
-      <PaymentCard />
+      <PaymentCard account={getAccountById(1)} />
       <Transactions />
-
     </Container>
   );
 };

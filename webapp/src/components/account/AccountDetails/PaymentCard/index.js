@@ -1,103 +1,79 @@
-import { useState } from "react";
-import PaymentCardLib from "react-payment-card-component";
-import {
-  Button,
-  Paper,
-  CircularProgress,
-  Typography,
-  Grid,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
+import { CardView } from "../../../cards/CardView";
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {
     marginTop: spacing(2),
   },
-  grid: {
-    minHeight: 256,
-    padding: spacing(2, 4),
-  },
-  loadingContainer: {
-    display: "flex",
-    height: "100%",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  loading: {
-    display: "block",
-  },
-  right: {
-    marginTop: spacing(2),
-    display: "flex",
-    textAlign: "right",
-    justifyContent: "center",
-    alignItems: "flex-end",
-    flexDirection: "column",
-  },
-  marginTop: {
-    marginTop: spacing(2),
+  textBg: {
+    backgroundColor: "rgb(158, 178, 202, 0.85)",
+    padding: "2px 8px",
+    margin: "4px 0",
+    color: "white",
+    borderRadius: "4px",
   },
 }));
 
-export const PaymentCard = ({ data }) => {
-  const [flipped, setFlipped] = useState(false);
-  const [loading, setLoading] = useState(false);
+export const PaymentCard = ({ account }) => {
   const classes = useStyles();
+
+  const CardNumbers = () => (
+    <Box py={0.5}>
+      <Grid container direction="column">
+        <Grid item>
+          <Box className={classes.textBg}>
+            <Typography variant="h4" align="center">1111 1111 1111 1111</Typography>
+          </Box>
+        </Grid>
+        <Grid item>
+          <Grid container spacing={2}>
+            <Grid item>
+              <Box className={classes.textBg}>
+                <Typography variant="h6">08/24</Typography>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box className={classes.textBg}>
+                <Typography variant="h6">CVV: 123</Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 
   return (
     <div className={classes.container}>
       <Typography variant="h5">Karty wirtualne</Typography>
       <Paper>
-        <Grid container className={classes.grid}>
-          <Grid item xs={5}>
-            {loading && (
-              <div className={classes.loadingContainer}>
-                <CircularProgress className={classes.loading} />
-              </div>
-            )}
-            {!loading && (
-              <PaymentCardLib
-                bank="default"
-                brand="mastercard"
-                number="4111111111111111"
-                cvv="202"
-                holderName="Owen Lars"
-                expiration="12/20"
-                flipped={flipped}
-              />
-            )}
+        <Box p={2}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6} lg={5}>
+              <CardView account={account} bottomSlot={<CardNumbers />} />
+            </Grid>
+
+            <Grid item xs={12} md={6} lg={7}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    Generuj nową
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="contained" color="secondary">
+                    Dezaktywuj
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={7} className={classes.right}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => setFlipped(!flipped)}
-            >
-              Pokaż CVV
-            </Button>
-            <Button
-              className={classes.marginTop}
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setLoading(true);
-                setTimeout(() => {
-                  setLoading(false);
-                }, 2500);
-              }}
-            >
-              Generuj nową
-            </Button>
-            <Button
-              className={classes.marginTop}
-              variant="contained"
-              color="secondary"
-            >
-              Dezaktywuj
-            </Button>
-          </Grid>
-        </Grid>
+        </Box>
       </Paper>
     </div>
   );
