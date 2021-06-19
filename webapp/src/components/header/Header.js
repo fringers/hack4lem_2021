@@ -28,7 +28,7 @@ export const Header = () => {
             component={Link}
             to="/"
           >
-            PayMate
+            Paymate
           </Typography>
         </div>
 
