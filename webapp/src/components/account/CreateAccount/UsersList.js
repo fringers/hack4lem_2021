@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { UserItem } from "./UserItem/UserItem";
+import { EmailField } from "./UserItem/EmailField";
 
 const ID = () => {
   return "_" + Math.random().toString(36).substr(2, 9);
@@ -15,9 +16,9 @@ const defaultUser = () => ({
   blockPayment: false,
 });
 
-const emptyUser = () => ({
+const emptyUser = (email) => ({
   id: ID(),
-  email: "",
+  email: email,
   contribution: "",
   blockPayment: false,
 });
@@ -25,13 +26,15 @@ const emptyUser = () => ({
 export const UsersList = ({ onChange }) => {
   const [mainUser, setMainUser] = useState(defaultUser());
   const [users, setUsers] = useState([]);
+  const [addEmail, setAddEmail] = useState([]);
 
   useEffect(() => {
     onChange([mainUser, ...users]);
   }, [onChange, mainUser, users]);
 
   const addUser = () => {
-    setUsers([...users, emptyUser()]);
+    if (!addEmail || !addEmail.length) return;
+    setUsers([...users, emptyUser(addEmail)]);
   };
 
   const onMainUserUpdate = (data) => {
@@ -57,6 +60,17 @@ export const UsersList = ({ onChange }) => {
         <Typography variant="subtitle1">Osoby z dostępem do konta</Typography>
       </Grid>
 
+      <Grid item container spacing={2} alignItems="center">
+        <Grid item>
+          <EmailField value={addEmail} onChange={setAddEmail} />
+        </Grid>
+        <Grid item>
+          <Button variant="outlined" color="secondary" onClick={addUser}>
+            Dodaj osobę
+          </Button>
+        </Grid>
+      </Grid>
+
       <Grid item>
         <Grid container direction="column" spacing={1}>
           <Grid item>
@@ -73,12 +87,6 @@ export const UsersList = ({ onChange }) => {
             </Grid>
           ))}
         </Grid>
-      </Grid>
-
-      <Grid item>
-        <Button variant="outlined" color="secondary" onClick={addUser}>
-          Dodaj osobę
-        </Button>
       </Grid>
     </Grid>
   );
