@@ -7,11 +7,12 @@ import {
   ListItemAvatar,
   ListItemText,
   Grid,
+  Tooltip,
 } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
 import { Chart } from "../Chart";
-import { users as usersData } from "../../../../data/users";
+import { getUserById } from "../../../../data/users";
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: { marginTop: spacing(2) },
@@ -35,30 +36,29 @@ const useStyles = makeStyles(({ spacing }) => ({
     alignSelf: "flex-end",
     marginBottom: spacing(-2),
   },
+  listItemText: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
 }));
 
 export const People = ({ users = [] }) => {
   const classes = useStyles();
-
-  console.log({ users });
 
   return (
     <div className={classes.container}>
       <Typography variant="h5">Osoby</Typography>
       <Paper>
         <Grid container>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8} sm={7}>
             <Chart />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4} sm={5}>
             <List classes={{ root: classes.listRoot }}>
-              {users.map(({ id }) => {
-                const { fullName, avatar, bankAvatar } = usersData.find(
-                  (u) => u.id === id
-                );
-                console.log({ fullName });
+              {users.map(({ id, contribution, used }) => {
+                const { fullName, avatar, bankAvatar } = getUserById(id);
                 return (
-                  <ListItem>
+                  <ListItem key={id}>
                     <ListItemAvatar>
                       <AvatarGroup>
                         <Avatar
@@ -74,10 +74,37 @@ export const People = ({ users = [] }) => {
                       </AvatarGroup>
                     </ListItemAvatar>
                     <ListItemText
-                      component="div"
                       primary={
                         <Typography component="p" variant="body1">
                           {fullName}
+                        </Typography>
+                      }
+                    />
+                    <ListItemText
+                      classes={{ root: classes.listItemText }}
+                      primary={
+                        <Typography component="p" variant="body1">
+                          <Tooltip title="Wpłacił">
+                            <Typography
+                              component="span"
+                              variant="subtitle2"
+                              color="primary"
+                              aria-label="Wpłacił"
+                            >
+                              {contribution}
+                            </Typography>
+                          </Tooltip>
+                          /
+                          <Tooltip title="Wydał">
+                            <Typography
+                              component="span"
+                              variant="subtitle2"
+                              aria-label="Wydał"
+                              color="secondary"
+                            >
+                              {used}
+                            </Typography>
+                          </Tooltip>
                         </Typography>
                       }
                     />
@@ -91,31 +118,3 @@ export const People = ({ users = [] }) => {
     </div>
   );
 };
-
-// </ListItem>
-// <ListItem>
-//   <ListItemAvatar>
-//     <Avatar
-//       alt="Travis Howard"
-//       src="https://material-ui.com/static/images/avatar/2.jpg"
-//     />
-//   </ListItemAvatar>
-//   <ListItemText
-//     primary={
-//       <>
-//         <Typography component="span" variant="body1">
-//           Travis Howard
-//         </Typography>
-//       </>
-//     }
-//   />
-// </ListItem>
-// <ListItem>
-//   <ListItemAvatar>
-//     <Avatar
-//       alt="Cindy Baker"
-//       src="https://material-ui.com/static/images/avatar/3.jpg"
-//     />
-//   </ListItemAvatar>
-//   <ListItemText primary="Sandra Adams" secondary={null} />
-// </ListItem>

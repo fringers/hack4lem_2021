@@ -8,12 +8,12 @@ import { getCategoryCard } from "../../data/cards";
 
 const useStyles = makeStyles((theme) => ({
   textBg: {
-    backgroundColor: "rgb(158, 178, 202, 0.85)",
+    backgroundColor: "rgb(158, 178, 202, 0.45)",
     padding: "2px 8px",
     margin: "4px 0",
     color: "white",
     borderRadius: "4px",
-    maxWidth: "100%",
+    width: "fit-content",
   },
   textSeparator: {
     paddingLeft: "8px",
