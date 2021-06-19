@@ -17,6 +17,7 @@ export const CreateAccount = () => {
   const [name, setName] = useState("");
   const [budget, setBudget] = useState("");
   const [renewal, setRenewal] = useState("");
+  const [users, setUsers] = useState([]);
 
   const onSubmit = () => {
     const request = {
@@ -24,6 +25,7 @@ export const CreateAccount = () => {
       name,
       budget,
       renewal,
+      users,
     };
     console.log(request);
   };
@@ -55,7 +57,7 @@ export const CreateAccount = () => {
               </Grid>
 
               <Grid item>
-                <UsersList />
+                <UsersList onChange={setUsers} />
               </Grid>
 
               <Grid item>
