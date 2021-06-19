@@ -42,7 +42,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 export const PaymentCard = ({ data }) => {
   const [flipped, setFlipped] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const classes = useStyles();
 
   return (
@@ -50,7 +50,7 @@ export const PaymentCard = ({ data }) => {
       <Typography variant="h5">Karty wirtualne</Typography>
       <Paper>
         <Grid container className={classes.grid}>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             {loading && (
               <div className={classes.loadingContainer}>
                 <CircularProgress className={classes.loading} />
@@ -68,7 +68,7 @@ export const PaymentCard = ({ data }) => {
               />
             )}
           </Grid>
-          <Grid item xs={6} className={classes.right}>
+          <Grid item xs={7} className={classes.right}>
             <Button
               variant="contained"
               color="primary"
