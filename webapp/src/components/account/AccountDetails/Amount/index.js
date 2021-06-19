@@ -1,7 +1,10 @@
+import { useState } from "react";
 import clsx from "clsx";
 import { Paper, Typography, Button, Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
+import { Blik } from "./Blik";
+import { NotImplemented } from "../../../NotImplemented";
 
 import { users } from "../../../../data/users";
 
@@ -41,6 +44,26 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
 export const Amount = ({ available, name = "" }) => {
   const classes = useStyles();
 
+  const [blikOpen, setBlikOpen] = useState(false);
+  const [transactionNotImplementedOpen, setTransactionNotImplementedOpen] =
+    useState(false);
+
+  const handleBlikOpen = () => {
+    setBlikOpen(true);
+  };
+
+  const handleBlikClose = () => {
+    setBlikOpen(false);
+  };
+
+  const handleTransactionNotImplementedOpenOpen = () => {
+    setTransactionNotImplementedOpen(true);
+  };
+
+  const handleTransactionNotImplementedOpenClose = () => {
+    setTransactionNotImplementedOpen(false);
+  };
+
   return (
     <>
       <Paper className={classes.container}>
@@ -66,12 +89,22 @@ export const Amount = ({ available, name = "" }) => {
               className={classes.marginButton}
               variant="contained"
               color="primary"
+              onClick={handleTransactionNotImplementedOpenOpen}
             >
               Przelew
             </Button>
-            <Button variant="contained" color="primary">
+            <NotImplemented
+              open={transactionNotImplementedOpen}
+              onClose={handleTransactionNotImplementedOpenClose}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleBlikOpen}
+            >
               Blik
             </Button>
+            <Blik open={blikOpen} onClose={handleBlikClose} />
           </div>
         </div>
       </Paper>
