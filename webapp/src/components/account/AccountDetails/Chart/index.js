@@ -14,6 +14,7 @@ export const Chart = () => {
   return (
     <Container className={classes.container}>
       <Bar
+        aria-label="wykres wydatków"
         data={chartData}
         height={300}
         options={{ maintainAspectRatio: false }}

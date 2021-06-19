@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { UserAvatar } from "../avatar/UserAvatar";
+import {
+  Typography,
+  Toolbar,
+  AppBar,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   titleWrapper: {
@@ -30,10 +31,6 @@ export const Header = () => {
           >
             Paymate
           </Typography>
-        </div>
-
-        <div>
-          <UserAvatar />
         </div>
       </Toolbar>
     </AppBar>

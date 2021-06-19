@@ -42,7 +42,7 @@ export const PaymentCard = ({ account }) => {
       <Grid container direction="column">
         <Grid item>
           <Box className={classes.textBg} display={{ xs: "block", sm: "none" }}>
-            <Typography variant="h6" align="center">
+            <Typography variant="body1" align="center">
               1111 1111 1111 1111
             </Typography>
           </Box>
@@ -65,7 +65,7 @@ export const PaymentCard = ({ account }) => {
                 className={classes.textBg}
                 display={{ xs: "none", sm: "block" }}
               >
-                <Typography variant="h6">08/24</Typography>
+                <Typography variant="body1">08/24</Typography>
               </Box>
             </Grid>
             <Grid item>
@@ -79,7 +79,7 @@ export const PaymentCard = ({ account }) => {
                 className={classes.textBg}
                 display={{ xs: "none", sm: "block" }}
               >
-                <Typography variant="h6">CVV: 123</Typography>
+                <Typography variant="body1">CVV: 123</Typography>
               </Box>
             </Grid>
           </Grid>
