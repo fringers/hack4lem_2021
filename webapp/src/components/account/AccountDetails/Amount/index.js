@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Paper, Typography, div, Button, Avatar } from "@material-ui/core";
+import { Paper, Typography, Button, Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
 
@@ -36,7 +36,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
 }));
 
-export const Amount = ({ name = "" }) => {
+export const Amount = ({ available, name = "" }) => {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,7 @@ export const Amount = ({ name = "" }) => {
           <div>
             <Typography variant="h5">Dostępne środki</Typography>
             <Typography component="span" variant="h4" color="secondary">
-              140.00 PLN
+              {available.toFixed(2)} PLN
             </Typography>
           </div>
         </div>

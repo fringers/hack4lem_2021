@@ -42,7 +42,7 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-export const People = ({ users = [] }) => {
+export const People = ({ budget, users = [] }) => {
   const classes = useStyles();
 
   return (
@@ -91,7 +91,7 @@ export const People = ({ users = [] }) => {
                               color="primary"
                               aria-label="Wpłacił"
                             >
-                              {contribution.toFixed(2)}
+                              {(budget * contribution / 100).toFixed(2)}
                             </Typography>
                           </Tooltip>
                           /

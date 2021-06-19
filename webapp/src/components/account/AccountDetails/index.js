@@ -13,8 +13,8 @@ export const AccountDetails = () => {
 
   return (
     <Container>
-      <Amount name={data.name} />
-      <People users={data.users} />
+      <Amount available={data.available} name={data.name} />
+      <People budget={data.budget} users={data.users} />
       <PaymentCard account={data} />
       <Transactions />
     </Container>
