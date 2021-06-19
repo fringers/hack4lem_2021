@@ -3,8 +3,9 @@ import Container from "@material-ui/core/Container";
 
 import { PaymentCard } from "./PaymentCard";
 import { People } from "./People";
-import { Chart } from "./Chart";
+// import { Chart } from "./Chart";
 import { Amount } from "./Amount";
+import { Transactions } from "./Transactions";
 
 export const AccountDetails = () => {
   // const { id } = useParams();
@@ -26,7 +27,7 @@ export const AccountDetails = () => {
       <Amount name={"Restauracje"} />
       <People />
       <PaymentCard />
-      <Chart />
+      <Transactions />
 
     </Container>
   );
