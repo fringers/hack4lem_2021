@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Canvas from "./Canvas";
 
 export const InteractiveCanvas = () => {
   useEffect(() => {
@@ -25,12 +26,5 @@ export const InteractiveCanvas = () => {
     };
   }, []);
 
-  return (
-    <div id="view" className="view">
-      <div className="debug">
-        <div className="stats"></div>
-        <div className="logs"></div>
-      </div>
-    </div>
-  );
+  return <Canvas />;
 };
