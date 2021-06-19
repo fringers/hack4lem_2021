@@ -1,7 +1,5 @@
-import { useParams } from "react-router-dom";
-import Box from "@material-ui/core/Box";
+// import { useParams } from "react-router-dom";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 
 import { PaymentCard } from "./PaymentCard";
 import { People } from "./People";
@@ -9,7 +7,7 @@ import { Chart } from "./Chart";
 import { Amount } from "./Amount";
 
 export const AccountDetails = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   //   useEffect(async () => {
   //     const result = await axios(
@@ -27,9 +25,9 @@ export const AccountDetails = () => {
 
       <Amount name={"Restauracje"} />
       <People />
+      <PaymentCard />
       <Chart />
 
-      <PaymentCard />
     </Container>
   );
 };

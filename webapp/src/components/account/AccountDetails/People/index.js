@@ -19,7 +19,7 @@ const data = {
     {
       label: "Wydatki vs Pozostałe środki",
       data: [300, 75],
-      backgroundColor: ["rgb(255, 99, 132)", "rgb(0, 53, 116)"],
+      backgroundColor: ["rgb(228, 32, 44)", "rgb(0, 53, 116)"],
       hoverOffset: 4,
     },
   ],
