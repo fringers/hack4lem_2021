@@ -12,24 +12,14 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { CardView } from "../cards/CardView";
+import { Link } from "react-router-dom";
 
 export const CreateAccount = () => {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
-  const [budget, setBudget] = useState("");
+  const [, setBudget] = useState("");
   const [renewal, setRenewal] = useState("");
-  const [users, setUsers] = useState([]);
-
-  const onSubmit = () => {
-    const request = {
-      category,
-      name,
-      budget,
-      renewal,
-      users,
-    };
-    console.log(request);
-  };
+  const [, setUsers] = useState([]);
 
   return (
     <Container>
@@ -81,7 +71,12 @@ export const CreateAccount = () => {
               </Grid>
 
               <Grid item>
-                <Button variant="contained" color="primary" onClick={onSubmit}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  component={Link}
+                  to="/"
+                >
                   Stwórz konto
                 </Button>
               </Grid>
