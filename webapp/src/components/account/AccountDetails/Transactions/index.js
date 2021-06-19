@@ -57,12 +57,6 @@ export const Transactions = () => {
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-20.00 PLN</Typography>}
             />
-            <ListItemText
-              primary={
-                <Typography variant="caption">Saldo po transakcji</Typography>
-              }
-              secondary={<Typography variant="body1">1480.00 PLN</Typography>}
-            />
             <ListItemSecondaryAction>
               <IconButton
                 onClick={() => setOpen(true)}
@@ -87,12 +81,6 @@ export const Transactions = () => {
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-300.80 PLN</Typography>}
-            />
-            <ListItemText
-              primary={
-                <Typography variant="caption">Saldo po transakcji</Typography>
-              }
-              secondary={<Typography variant="body1">1200.20 PLN</Typography>}
             />
             <ListItemSecondaryAction>
               <IconButton
@@ -119,12 +107,6 @@ export const Transactions = () => {
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-15.00 PLN</Typography>}
             />
-            <ListItemText
-              primary={
-                <Typography variant="caption">Saldo po transakcji</Typography>
-              }
-              secondary={<Typography variant="body1">1185.20 PLN</Typography>}
-            />
             <ListItemSecondaryAction>
               <IconButton
                 onClick={() => setOpen(true)}
@@ -149,12 +131,6 @@ export const Transactions = () => {
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-10.80 PLN</Typography>}
-            />
-            <ListItemText
-              primary={
-                <Typography variant="caption">Saldo po transakcji</Typography>
-              }
-              secondary={<Typography variant="body1">1175.20 PLN</Typography>}
             />
             <ListItemSecondaryAction>
               <IconButton
