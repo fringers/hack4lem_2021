@@ -9,9 +9,9 @@ import Divider from "@material-ui/core/Divider";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from '@material-ui/core/IconButton';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ReceiptIcon from '@material-ui/icons/Receipt';
+import IconButton from "@material-ui/core/IconButton";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import ReceiptIcon from "@material-ui/icons/Receipt";
 
 const useStyles = makeStyles(({ spacing, palette }) => ({
   container: {
@@ -48,7 +48,7 @@ export const Transactions = () => {
                 src="https://material-ui.com/static/images/avatar/1.jpg"
               />
             </ListItemAvatar>
-            <ListItemText primary="Karta płatnicza" secondary="Sty 9, 2021" />
+            <ListItemText primary="Karta" secondary="Sty 9, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-20.00 PLN</Typography>}
@@ -102,7 +102,7 @@ export const Transactions = () => {
                 src="https://material-ui.com/static/images/avatar/3.jpg"
               />
             </ListItemAvatar>
-            <ListItemText primary="Karta płatnicza" secondary="Sty 3, 2021" />
+            <ListItemText primary="Karta" secondary="Sty 3, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
               secondary={<Typography variant="body1">-15.00 PLN</Typography>}

@@ -42,7 +42,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 export const PaymentCard = ({ data }) => {
   const [flipped, setFlipped] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const classes = useStyles();
 
   return (
