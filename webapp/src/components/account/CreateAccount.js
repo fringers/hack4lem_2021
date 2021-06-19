@@ -11,6 +11,7 @@ import { UsersList } from "./CreateAccount/UsersList";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { CardView } from "../cards/CardView";
 
 export const CreateAccount = () => {
   const [category, setCategory] = useState("");
@@ -40,20 +41,39 @@ export const CreateAccount = () => {
 
           <form noValidate autoComplete="off">
             <Grid container direction="column" spacing={2}>
-              <Grid item>
-                <CategoryField onChange={setCategory} />
-              </Grid>
+              <Grid item container spacing={2}>
+                <Grid
+                  item
+                  container
+                  direction="column"
+                  spacing={2}
+                  xs={12}
+                  sm={6}
+                  md={7}
+                  lg={8}
+                >
+                  <Grid item>
+                    <CategoryField onChange={setCategory} />
+                  </Grid>
 
-              <Grid item>
-                <NameField onChange={setName} />
+                  <Grid item>
+                    <NameField onChange={setName} />
+                  </Grid>
+
+                  <Grid item>
+                    <RenewalField onChange={setRenewal} />
+                  </Grid>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={5} lg={4}>
+                  <CardView
+                    account={{ category, renewalPeriod: renewal, name }}
+                  />
+                </Grid>
               </Grid>
 
               <Grid item>
                 <BudgetField onChange={setBudget} />
-              </Grid>
-
-              <Grid item>
-                <RenewalField onChange={setRenewal} />
               </Grid>
 
               <Grid item>

@@ -8,6 +8,5 @@ export const categories = [
   ["services", "Usługi"],
 ];
 
-
 export const getCategoryText = (key) =>
-  categories.find((rp) => rp[0] == key)[1];
+  !key ? "-" : categories.find((rp) => rp[0] == key)[1];

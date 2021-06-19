@@ -26,19 +26,44 @@ export const PaymentCard = ({ account }) => {
     <Box py={0.5}>
       <Grid container direction="column">
         <Grid item>
-          <Box className={classes.textBg}>
-            <Typography variant="h4" align="center">1111 1111 1111 1111</Typography>
+          <Box className={classes.textBg} display={{ xs: "block", sm: "none" }}>
+            <Typography variant="h6" align="center">
+              1111 1111 1111 1111
+            </Typography>
+          </Box>
+          <Box className={classes.textBg} display={{ xs: "none", sm: "block" }}>
+            <Typography variant="h4" align="center">
+              1111 1111 1111 1111
+            </Typography>
           </Box>
         </Grid>
         <Grid item>
           <Grid container spacing={2}>
             <Grid item>
-              <Box className={classes.textBg}>
+              <Box
+                className={classes.textBg}
+                display={{ xs: "block", sm: "none" }}
+              >
+                <Typography variant="body2">08/24</Typography>
+              </Box>
+              <Box
+                className={classes.textBg}
+                display={{ xs: "none", sm: "block" }}
+              >
                 <Typography variant="h6">08/24</Typography>
               </Box>
             </Grid>
             <Grid item>
-              <Box className={classes.textBg}>
+              <Box
+                className={classes.textBg}
+                display={{ xs: "block", sm: "none" }}
+              >
+                <Typography variant="body2">CVV: 123</Typography>
+              </Box>
+              <Box
+                className={classes.textBg}
+                display={{ xs: "none", sm: "block" }}
+              >
                 <Typography variant="h6">CVV: 123</Typography>
               </Box>
             </Grid>

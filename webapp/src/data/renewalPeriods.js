@@ -7,5 +7,4 @@ export const renewalPeriods = [
 ];
 
 export const getRenewalPeriodText = (key) =>
-  renewalPeriods.find((rp) => rp[0] == key)[1];
-  
+  !key ? "-" : renewalPeriods.find((rp) => rp[0] == key)[1];

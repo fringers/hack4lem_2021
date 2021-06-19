@@ -6,6 +6,7 @@ export const categoryCard = [
   ["transport", "/cards/transport-card.png"],
   ["general", "/cards/general-card.png"],
   ["services", "/cards/services-card.png"],
+  ["", "/cards/empty-card.png"],
 ];
 
 export const getCategoryCard = (cat) =>
