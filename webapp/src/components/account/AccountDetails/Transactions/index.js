@@ -47,15 +47,16 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/1.jpg"
-              />
+              <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
             </ListItemAvatar>
             <ListItemText primary="Karta" secondary="Sty 9, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
-              secondary={<Typography variant="body1">-20.00 PLN</Typography>}
+              secondary={
+                <Typography color="secondary" variant="body1">
+                  -20.00 PLN
+                </Typography>
+              }
             />
             <ListItemSecondaryAction>
               <IconButton
@@ -72,15 +73,16 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/1.jpg"
-              />
+              <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
             </ListItemAvatar>
             <ListItemText primary="Blik" secondary="Sty 8, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
-              secondary={<Typography variant="body1">-300.80 PLN</Typography>}
+              secondary={
+                <Typography color="secondary" variant="body1">
+                  -300.80 PLN
+                </Typography>
+              }
             />
             <ListItemSecondaryAction>
               <IconButton
@@ -97,15 +99,16 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/3.jpg"
-              />
+              <Avatar src="https://material-ui.com/static/images/avatar/3.jpg" />
             </ListItemAvatar>
             <ListItemText primary="Karta" secondary="Sty 3, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
-              secondary={<Typography variant="body1">-15.00 PLN</Typography>}
+              secondary={
+                <Typography color="secondary" variant="body1">
+                  -15.00 PLN
+                </Typography>
+              }
             />
             <ListItemSecondaryAction>
               <IconButton
@@ -122,15 +125,16 @@ export const Transactions = () => {
         <List>
           <ListItem button>
             <ListItemAvatar>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/2.jpg"
-              />
+              <Avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
             </ListItemAvatar>
             <ListItemText primary="Przelew" secondary="Sty 1, 2021" />
             <ListItemText
               primary={<Typography variant="caption">Kwota</Typography>}
-              secondary={<Typography variant="body1">-10.80 PLN</Typography>}
+              secondary={
+                <Typography color="secondary" variant="body1">
+                  -10.80 PLN
+                </Typography>
+              }
             />
             <ListItemSecondaryAction>
               <IconButton

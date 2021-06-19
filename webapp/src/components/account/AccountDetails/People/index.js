@@ -87,7 +87,7 @@ export const People = ({ budget, users = [] }) => {
                           <Tooltip title="Wpłacił">
                             <Typography
                               component="span"
-                              variant="subtitle2"
+                              variant="subtitle1"
                               color="primary"
                               aria-label="Wpłacił"
                             >
@@ -98,7 +98,7 @@ export const People = ({ budget, users = [] }) => {
                           <Tooltip title="Wydał">
                             <Typography
                               component="span"
-                              variant="subtitle2"
+                              variant="subtitle1"
                               aria-label="Wydał"
                               color="secondary"
                             >
