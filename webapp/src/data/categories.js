@@ -8,5 +8,6 @@ export const categories = [
   ["services", "Usługi"],
 ];
 
-export const getCategoryText = (key) =>
+
+export const getCategoryText = (key) => // eslint-disable-next-line
   categories.find((rp) => rp[0] == key)[1];

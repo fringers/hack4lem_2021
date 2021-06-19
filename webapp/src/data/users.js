@@ -19,4 +19,5 @@ export const users = [
   },
 ];
 
+// eslint-disable-next-line
 export const getUserById = (id) => users.find((u) => u.id == id);

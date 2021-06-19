@@ -113,4 +113,5 @@ export const accounts = [
   },
 ];
 
+// eslint-disable-next-line
 export const getAcountById = (id) => accounts.find((u) => u.id == id);
