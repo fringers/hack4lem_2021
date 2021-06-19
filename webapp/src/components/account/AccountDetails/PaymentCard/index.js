@@ -11,7 +11,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     marginTop: spacing(2),
   },
   textBg: {
-    backgroundColor: "rgb(158, 178, 202, 0.6)",
+    backgroundColor: "rgb(0, 53, 116, 0.6)",
     textShadow: "1px 1px #000000",
     padding: "0 4px",
     margin: "4px 0",
