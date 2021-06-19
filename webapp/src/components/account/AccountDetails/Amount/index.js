@@ -1,7 +1,9 @@
+import { useState } from "react";
 import clsx from "clsx";
 import { Paper, Typography, Button, Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core";
+import { Blik } from "./Blik";
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   container: {
@@ -38,6 +40,16 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
 
 export const Amount = ({ available, name = "" }) => {
   const classes = useStyles();
+
+  const [blikOpen, setBlikOpen] = useState(false);
+
+  const handleBlikOpen = () => {
+    setBlikOpen(true);
+  };
+
+  const handleBlikClose = () => {
+    setBlikOpen(false);
+  };
 
   return (
     <>
@@ -76,9 +88,14 @@ export const Amount = ({ available, name = "" }) => {
             >
               Przelew
             </Button>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleBlikOpen}
+            >
               Blik
             </Button>
+            <Blik open={blikOpen} onClose={handleBlikClose} />
           </div>
         </div>
       </Paper>
