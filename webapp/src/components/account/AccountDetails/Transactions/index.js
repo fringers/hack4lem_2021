@@ -16,7 +16,7 @@ import ReceiptIcon from "@material-ui/icons/Receipt";
 
 import { InvoiceDialog } from "./InvoiceDialog";
 
-const useStyles = makeStyles(({ spacing, palette }) => ({
+const useStyles = makeStyles(({ spacing }) => ({
   container: {
     marginTop: spacing(2),
   },
