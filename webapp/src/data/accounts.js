@@ -21,7 +21,7 @@ export const accounts = [
     id: 1,
     category: "groceries",
     renewalPeriod: "month",
-    name: "Wspólne wyżywienie z dziewczyną",
+    name: "Wspólne gotowanie z dziewczyną",
     budget: 2000.00,
     available: 1500.59,
     users: [
