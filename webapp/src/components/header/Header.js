@@ -28,7 +28,7 @@ export const Header = () => {
             component={Link}
             to="/"
           >
-            Super banking app 🔥🔥🔥
+            PayMate
           </Typography>
         </div>
 
