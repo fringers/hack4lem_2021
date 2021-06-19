@@ -1,4 +1,4 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 
 import { PaymentCard } from "./PaymentCard";
@@ -9,7 +9,8 @@ import { Transactions } from "./Transactions";
 import { getAccountById } from "../../../data/accounts";
 
 export const AccountDetails = () => {
-  // const { id } = useParams();
+  const { id } = useParams();
+  const account = getAccountById(id);
 
   //   useEffect(async () => {
   //     const result = await axios(
@@ -27,7 +28,7 @@ export const AccountDetails = () => {
 
       <Amount name={"Restauracje"} />
       <People />
-      <PaymentCard account={getAccountById(1)} />
+      <PaymentCard account={account} />
       <Transactions />
     </Container>
   );
