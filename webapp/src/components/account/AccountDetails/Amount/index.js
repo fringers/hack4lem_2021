@@ -7,8 +7,6 @@ import { Blik } from "./Blik";
 import { NotImplemented } from "../../../NotImplemented";
 import { getUserById } from "../../../../data/users";
 
-import { users } from "../../../../data/users";
-
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   container: {
     display: "flex",
@@ -99,6 +97,7 @@ export const Amount = ({ available, name = "", usersInfo }) => {
             <NotImplemented
               open={transactionNotImplementedOpen}
               onClose={handleTransactionNotImplementedOpenClose}
+              text="W tym miejscu użytkownik będzie mógł wykonać dowolny przelew używając dostępnych, wspólnych środków. Z punktu widzenia użytkownika, będzie to wyglądało jak zwykły przelew bankowy, natomiast użyte środki mogą pochodzić z kont wszystkich użytkowników."
             />
             <Button
               variant="contained"

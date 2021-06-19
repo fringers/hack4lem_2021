@@ -26,15 +26,26 @@ const useStyles = makeStyles(({ spacing }) => ({
 export const PaymentCard = ({ account }) => {
   const classes = useStyles();
 
-  const [transactionNotImplementedOpen, setTransactionNotImplementedOpen] =
+  const [generateNotImplementedOpen, setGenerateNotImplementedOpen] =
     useState(false);
 
-  const handleTransactionNotImplementedOpenOpen = () => {
-    setTransactionNotImplementedOpen(true);
+  const [deactivateNotImplementedOpen, setDeactivateNotImplementedOpen] =
+    useState(false);
+
+  const handleGenerateNotImplementedOpenOpen = () => {
+    setGenerateNotImplementedOpen(true);
   };
 
-  const handleTransactionNotImplementedOpenClose = () => {
-    setTransactionNotImplementedOpen(false);
+  const handleGenerateNotImplementedOpenClose = () => {
+    setGenerateNotImplementedOpen(false);
+  };
+
+  const handleDeactivateNotImplementedOpenOpen = () => {
+    setDeactivateNotImplementedOpen(true);
+  };
+
+  const handleDeactivateNotImplementedOpenClose = () => {
+    setDeactivateNotImplementedOpen(false);
   };
 
   const CardNumbers = () => (
@@ -104,24 +115,30 @@ export const PaymentCard = ({ account }) => {
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={handleTransactionNotImplementedOpenOpen}
+                    onClick={handleGenerateNotImplementedOpenOpen}
                   >
                     Generuj nową
                   </Button>
+                  <NotImplemented
+                    open={generateNotImplementedOpen}
+                    onClose={handleGenerateNotImplementedOpenClose}
+                    text="Użytkownik może w dowolnym momencie wygenerować nową wirtualną kartę, aby płacić nią w Internecie lub podpiąć do elektronicznego portfela, typu Google Pay."
+                  />
                 </Grid>
                 <Grid item>
                   <Button
                     variant="contained"
                     color="secondary"
-                    onClick={handleTransactionNotImplementedOpenOpen}
+                    onClick={handleDeactivateNotImplementedOpenOpen}
                   >
                     Dezaktywuj
                   </Button>
+                  <NotImplemented
+                    open={deactivateNotImplementedOpen}
+                    onClose={handleDeactivateNotImplementedOpenClose}
+                    text="Użytkownik może w każdym momencie dezaktywować swoją wirtualną kartę, jeśli na przykład została wykradziona ze sklepu Internetowego, w którym jej użył."
+                  />
                 </Grid>
-                <NotImplemented
-                  open={transactionNotImplementedOpen}
-                  onClose={handleTransactionNotImplementedOpenClose}
-                />
               </Grid>
             </Grid>
           </Grid>
