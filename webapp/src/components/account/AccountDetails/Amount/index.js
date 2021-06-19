@@ -27,12 +27,12 @@ export const Amount = ({ name = "" }) => {
     <>
       <Paper className={classes.container}>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={8}>
             <Typography variant="h4" component="span" color="primary">
               {name}
             </Typography>
           </Grid>
-          <Grid item xs={6} className={classes.right}>
+          <Grid item xs={4} className={classes.right}>
             <Typography variant="h5">Dostępne środki</Typography>
             <Typography component="span" variant="h4" color="secondary">
               140 PLN
