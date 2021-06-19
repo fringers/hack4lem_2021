@@ -48,7 +48,6 @@ export const PaymentCard = ({ data }) => {
   return (
     <div className={classes.container}>
       <Typography variant="h5">Karty wirtualne</Typography>
-      <Button onClick={() => setLoading(!loading)}>loading</Button>
       <Paper>
         <Grid container className={classes.grid}>
           <Grid item xs={6}>
@@ -81,6 +80,12 @@ export const PaymentCard = ({ data }) => {
               className={classes.marginTop}
               variant="contained"
               color="primary"
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  setLoading(false);
+                }, 2500);
+              }}
             >
               Generuj nową
             </Button>
