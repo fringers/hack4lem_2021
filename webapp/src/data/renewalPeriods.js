@@ -6,6 +6,6 @@ export const renewalPeriods = [
   ["year", "Co rok"],
 ];
 
-export const getRenewalPeriodText = (key) =>  // eslint-disable-next-line
+export const getRenewalPeriodText = (key) =>
   renewalPeriods.find((rp) => rp[0] == key)[1];
   
