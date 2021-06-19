@@ -1,36 +1,21 @@
-import { Pie } from "react-chartjs-2";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core";
+import { Bar } from "react-chartjs-2";
 
-const useStyles = makeStyles((theme) => ({
+import { chartData } from "../../../../data/chartData";
+
+const useStyles = makeStyles(() => ({
   container: {},
 }));
-
-const data = {
-  labels: ["Ali Connors", "Travis Howard", "Sandra Adams"],
-  datasets: [
-    {
-      label: "My First Dataset",
-      data: [300, 50, 100],
-      backgroundColor: [
-        "rgb(255, 99, 132)",
-        "rgb(0, 53, 116)",
-        "rgb(255, 205, 86)",
-      ],
-      hoverOffset: 4,
-    },
-  ],
-};
 
 export const Chart = () => {
   const classes = useStyles();
 
   return (
     <Container className={classes.container}>
-      <Pie
-        data={data}
+      <Bar
+        data={chartData}
         height={400}
-        width={400}
         options={{ maintainAspectRatio: false }}
       />
     </Container>
