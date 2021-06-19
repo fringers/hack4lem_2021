@@ -7,6 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { UserAvatar } from "../avatar/UserAvatar";
+import { getCategoryText } from "../../data/categories";
+import { getRenewalPeriodText } from "../../data/renewalPeriods";
 
 const useStyles = makeStyles((theme) => ({
   textSeparator: {
@@ -37,7 +39,7 @@ export const BudgetPreviewItem = ({ account }) => {
         <CardContent>
           <Box>
             <Typography display="inline" variant="body2">
-              Restauracje
+              {getCategoryText(account.category)}
             </Typography>
             <Typography
               display="inline"
@@ -47,7 +49,7 @@ export const BudgetPreviewItem = ({ account }) => {
               |
             </Typography>
             <Typography display="inline" variant="body2">
-              Odnawiane co miesiąc
+              {getRenewalPeriodText(account.renewalPeriod)}
             </Typography>
           </Box>
 
