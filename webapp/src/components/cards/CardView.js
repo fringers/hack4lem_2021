@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { getCategoryText } from "../../data/categories";
 import { getRenewalPeriodText } from "../../data/renewalPeriods";
+import { getCategoryCard } from "../../data/cards";
 
 const useStyles = makeStyles((theme) => ({
   textBg: {
@@ -28,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
   },
   content: {
-    backgroundImage: "url('/restaurant-card.png')",
     backgroundSize: "cover",
     position: "absolute",
     top: 0,
@@ -44,10 +44,15 @@ const useStyles = makeStyles((theme) => ({
 
 export const CardView = ({ account, bottomSlot }) => {
   const classes = useStyles();
-  
+
+  const cardImg = getCategoryCard(account.category);
+
   return (
     <Box className={classes.wrapper}>
-      <Box className={classes.content}>
+      <Box
+        className={classes.content}
+        style={{ backgroundImage: `url('${cardImg}')` }}
+      >
         <Grid
           container
           direction="column"
