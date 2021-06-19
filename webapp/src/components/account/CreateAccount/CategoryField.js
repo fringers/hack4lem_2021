@@ -4,16 +4,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
-
-const categories = [
-  ["restaurants", "Restauracje"],
-  ["groceries", "Artykuły spożywcze"],
-  ["health", "Zdrowie"],
-  ["sshopping", "Zakupy"],
-  ["transport", "Transport"],
-  ["general", "Ogólne"],
-  ["services", "Usługi"],
-];
+import { categories } from "../../../data/categories";
 
 export const CategoryField = ({ onChange }) => {
   const [value, setValue] = useState("");
