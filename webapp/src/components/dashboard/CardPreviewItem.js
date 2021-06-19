@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   progressText: {
     color: "white",
+    fontSize: 20,
   },
   avatar: {
     width: theme.spacing(4),
@@ -40,13 +41,11 @@ export const CardPreviewItem = ({ account }) => {
             className={classes.progressBar}
           />
         </Box>
-
         <Box position="absolute" pl={1} pt={0.5}>
-          <Typography variant="h6" className={classes.progressText}>
+          <Typography variant="body1" className={classes.progressText}>
             {account.available.toFixed(2)}/{account.budget.toFixed(2)} PLN
           </Typography>
         </Box>
-
         <Box position="absolute" right="0" top="0" bottom="0">
           <Box pr={1} pt={0.5}>
             <AvatarGroup max={4}>
