@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
-  Avatar,
   Toolbar,
   AppBar,
 } from "@material-ui/core";
-import { users } from "../../data/users";
 
 const useStyles = makeStyles((theme) => ({
   titleWrapper: {
@@ -34,7 +32,6 @@ export const Header = () => {
             Paymate
           </Typography>
         </div>
-        <Avatar src={users[0].avatar} alt={users[0].fullName} />
       </Toolbar>
     </AppBar>
   );

@@ -6,7 +6,6 @@ import { CreateAccount } from "./components/account/CreateAccount";
 import { AccountDetails } from "./components/account/AccountDetails";
 import { InteractiveCanvas } from "./components/InteractiveCanvas/InteractiveCanvas";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
 import font from "./font.woff";
 
 const newFont = {
