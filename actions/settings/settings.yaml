@@ -1,0 +1,20 @@
+category: GAMES_AND_TRIVIA
+defaultLocale: pl
+localizedSettings:
+  developerEmail: contact@fringers.pl
+  developerName: fringers.pl
+  displayName: PayMate
+  fullDescription: full
+  privacyPolicyUrl: https://fringers.pl
+  pronunciation: PayMate
+  sampleInvocations:
+  - Porozmawiaj z Split
+  shortDescription: short
+  smallLogoImage: https://lh3.googleusercontent.com/FQZriUBM1s42xeDOQrxyF9YwboT8X9_vBAhgF4GyimjA-fZPLiYBDnTZrNaTP0Jj0Taxi3bbwTo
+  themeCustomization:
+    backgroundColor: '#FAFAFA'
+    primaryColor: '#101010'
+  voice: male_2
+  voiceLocale: pl-PL
+projectId: fringers-hack4lem-80aee
+usesInteractiveCanvas: true

@@ -1,0 +1,5 @@
+handlers:
+- name: showCardsHandle
+- name: accNameDetailsHandle
+inlineCloudFunction:
+  executeFunction: ActionsOnGoogleFulfillment

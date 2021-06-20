@@ -1,0 +1,4 @@
+custom:
+  actions.intent.MAIN: {}
+  showAcc: {}
+  showCards: {}
