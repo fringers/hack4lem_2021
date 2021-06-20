@@ -8,3 +8,4 @@ Składa się z aplikacji webowej oraz modułu do google assistant (actions).
 
 - PDF: https://github.com/fringers/hack4lem_2021/blob/main/fringers%20-%20paymate.pdf
 - YouTube: https://www.youtube.com/watch?v=k08gz0W31AY
+- Demo: https://paymate.pl/
