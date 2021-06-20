@@ -1,0 +1,16 @@
+intentEvents:
+- intent: showCards
+  transitionToScene: showCards
+- intent: actions.intent.
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: Co chcesz zrobić?
+        suggestions:
+        - title: Wyświetl konta
+        - title: Edytuj konto
+        - title: Dodaj konto
+        - title: Usuń konto

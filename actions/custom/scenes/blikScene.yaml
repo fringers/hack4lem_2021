@@ -1,0 +1,14 @@
+intentEvents:
+- intent: accDetails
+  transitionToScene: ShowAccountDetails
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: <speak>Twój blik to 3 2 7 <break time="100ms"/> 5 1 4</speak>
+            text: 'Twój blik to: 327 514'
+        suggestions:
+        - title: Powtórz
+        - title: Wyświetl konta

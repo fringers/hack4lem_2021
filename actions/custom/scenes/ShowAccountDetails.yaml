@@ -1,0 +1,52 @@
+conditionalEvents:
+- condition: scene.slots.status == "FINAL"
+  handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          content:
+            card:
+              image:
+                url: https://paymate.pl/wykres.png
+              subtitle: Dostępne środki 1500.59 zł z 2000.00 zł.
+              text: ' Do konta należą: Tomasz Nowak i Marta Duda.'
+              title: Wspólne gotowanie z dziewczyną
+          firstSimple:
+            variants:
+            - speech: '<speak><p><s>Wspólne gotowanie z dziewczyną</s> <s>Dostępne
+                środki 1500.59 zł z 2000 zł.</s> <s>Do konta należą: Tomasz Nowak
+                i Marta Duda</s></p></speak>'
+              text: ' '
+          suggestions:
+          - title: Wygeneruj BLIK
+          - title: Zrób Przelew
+          - title: Dane moje karty
+          - title: Powrót
+          - title: Powtórz
+intentEvents:
+- intent: return
+  transitionToScene: showCards
+- intent: blikIntent
+  transitionToScene: blikScene
+slots:
+- name: accName
+  promptSettings:
+    initialPrompt:
+      webhookHandler: accNameDetailsHandle
+    noInputPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Którego konta?
+    noMatchPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Którego konta?
+  required: true
+  type:
+    name: string

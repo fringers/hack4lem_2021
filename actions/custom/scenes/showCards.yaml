@@ -1,0 +1,7 @@
+intentEvents:
+- intent: repeatInShowCards
+  transitionToScene: showCards
+- intent: accDetails
+  transitionToScene: ShowAccountDetails
+onEnter:
+  webhookHandler: showCardsHandle

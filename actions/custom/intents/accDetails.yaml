@@ -1,0 +1,15 @@
+parameters:
+- name: accName
+  type:
+    name: string
+trainingPhrases:
+- wyświetl szczegóły ...
+- szczegóły
+- wyświetl
+- wyświetl szczegóły
+- wyświetl szczegóły ($accName 'accName' auto=false)
+- wyświetl konto ($accName 'accName' auto=false)
+- wyświetl szczegóły konta ($accName 'accName' auto=false)
+- konto ($accName 'accName' auto=false)
+- pokaż szczegóły konta ($accName 'accName' auto=false)
+- szczegóły konta ($accName 'accName' auto=false)

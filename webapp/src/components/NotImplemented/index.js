@@ -13,7 +13,7 @@ export const NotImplemented = ({ open, onClose, text }) => {
         <p>
           Czas był ograniczony i nie byliśmy w stanie zaimplmentować wszystkich
           przepływów w aplikacji. Dlatego możesz trafiać na komunikaty jak ten.
-          Koniecznie zajrzyj do nasze prezentacji - znajdziesz tam opisy każdej
+          Koniecznie zajrzyj do naszej prezentacji - znajdziesz tam opisy każdej
           z funkcjonalności, której nie zdążyliśmy tu pokazać!
         </p>
       </Box>
